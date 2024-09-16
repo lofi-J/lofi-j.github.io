@@ -19,7 +19,7 @@ const header = css`
   display: flex;
   justify-content: space-between;
   nav {
-    width: 300px;
+    width: 30rem;
     display: flex;
   }
 `;
