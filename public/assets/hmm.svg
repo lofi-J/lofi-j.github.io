@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="220 200 100 120" width="100" height="120">
+  <g fill="white" stroke="white" stroke-width="5">
+    <!-- 첫 번째 타원 (왼쪽) -->
+    <ellipse cx="230" cy="250" rx="3" ry="30" />
+    <!-- 두 번째 타원 (오른쪽) -->
+    <ellipse cx="270" cy="250" rx="3" ry="30" />
+    <!-- 사각형 (아래) -->
+    <rect x="220" y="300" width="60" height="3" stroke="white" fill="white" />
+  </g>
+</svg>

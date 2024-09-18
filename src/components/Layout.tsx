@@ -1,10 +1,18 @@
+import React from "react";
 import Header from "./Header.tsx";
 import {css} from "@emotion/react";
+import {Theme} from "../App.tsx";
 
-const Layout = () => {
+
+interface ILayout {
+  theme: Theme;
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>
+}
+
+const Layout = ({theme, setTheme}: ILayout) => {
   return (
     <div css={layout}>
-      <Header />
+      <Header theme={theme} setTheme={setTheme} />
     </div>
   );
 }

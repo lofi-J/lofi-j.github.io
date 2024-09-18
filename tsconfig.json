@@ -4,9 +4,5 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
-  "compilerOptions": {
-    "paths": {
-      "three/examples/jsm/loaders/FBXLoader": ["types/three/examples/jsm/loaders/FBXLoader"]
-    }
-  }
+  "compilerOptions": {}
 }
