@@ -12,10 +12,18 @@ const globalStyle = css`
   :root {
     --background-color: rgb(24, 24, 24);
     --color: rgb(233, 233, 233);
+    --header-background-color: #20202380;
+    --orange: #FBD38D;
+    --purple: #6B46C1;
     
+    --max-header-height: 5rem;
     --max-width: 120rem;
-    --header-height: 4rem;
     --backdrop: 1rem;
+  }
+  [data-theme='light'] {
+    --background-color: rgb(237, 225, 210);
+    --color: rgb(20, 24, 33);
+    --header-background-color: #ffffff40;
   }
   
   // initial CSS
@@ -33,14 +41,18 @@ const globalStyle = css`
     left: 0;
     width: 100%;
     padding: 0.8rem;
-    background: #20202380;
-    height: var(--header-height);
+    background: var(--header-background-color);
+    max-height: var(--max-header-height);
   }
   main {
-    padding-top: var(--header-height);
+    margin-top: var(--max-header-height);
   }
   * {
     box-sizing: border-box;
+  }
+  a {
+    color: var(--color);
+    text-decoration: unset;
   }
 `;
 
