@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 import {mq} from "../styles/media.ts";
 import useMediaQuery from "../hooks/useMediaQuery.ts";
 import {breakpoint} from "../styles/media.ts";
+import useOutSideClick from '../hooks/useOutSideClick.ts';
 
 
 interface IHeader {
@@ -19,6 +20,7 @@ interface IHeader {
 const Header = ({theme, setTheme}: IHeader) => {
   const isTablet = useMediaQuery('tablet');
   const [showSideBar, setShowSideBar] = useState(false);
+  const ref = useOutSideClick<HTMLDivElement>(() => setShowSideBar(false));
   
   const changeTheme = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
@@ -46,10 +48,14 @@ const Header = ({theme, setTheme}: IHeader) => {
             }
           </div>
           {isTablet && (
-            <div css={toggle(theme)} className={'hamburger'} onClick={() => setShowSideBar(prev => !prev)}>
+            <div ref={ref} css={toggle(theme)} className={'hamburger'} onClick={() => setShowSideBar(prev => !prev)}>
               <RxHamburgerMenu />
               {showSideBar && (
-                <div css={sidebar}></div>
+                <div css={sidebar(theme)}>
+                  <Link to={'/'}>Home</Link>
+                  <Link to={'/about'}>About</Link>
+                  <Link to={'/work'}>Work</Link>
+                </div>
               )}
             </div>
           )}
@@ -74,6 +80,7 @@ const header = css`
   
   /* media */
   ${mq('tablet')} {
+    padding: 0.8rem 1.6rem;
     .container {
       width: ${breakpoint.tablet}px;
       justify-content: space-between;
@@ -168,19 +175,36 @@ const toggle = (theme: Theme) => css`
   &.hamburger {
     position: relative;
     background-color: transparent;
-    border: 1px solid var(--gray-200);
+    border: 1px solid ${theme === 'dark' ? 'var(--white-alpha-500)' : 'var(--gray-200)'};
     svg {
       transform: unset;
     }
     &:hover {
-      background-color: var(--gray-200);
+      background-color: ${theme === 'dark' ? 'var(--white-alpha-400)' : 'var(--gray-200)'};
+    }
+    &:has(div:hover) {
+      background-color: transparent;
     }
   }
 `;
 
-const sidebar = css`
+const sidebar = (theme: Theme) => css`
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  
+  top: 5rem;
+  right: 0;
+  width: 10rem;
+  border: 1px solid ${theme === 'dark' ? 'var(--white-alpha-500)' : 'var(--gray-300)'};
+  background-color: ${theme === 'dark' ? 'var(--white-alpha-400)' : 'white'};
+  border-radius: 4px;
+  a {
+    font-size: 1.3rem;
+    padding: 0.8rem 0 0.8rem 0.8rem;
+    &:hover {
+      background-color: ${theme === 'dark' ? 'var(--white-alpha-400)' : 'var(--gray-200)'}
+    }
+  }
 `;
 
 export default Header;

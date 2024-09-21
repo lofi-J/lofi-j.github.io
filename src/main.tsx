@@ -25,6 +25,18 @@ const globalStyle = css`
     --gray-800: #1A202C;
     --gray-900: #171923;
     
+    --white-alpha-100: rgba(255, 255, 255, 0.04);
+    --white-alpha-200: rgba(255, 255, 255, 0.06);
+    --white-alpha-300: rgba(255, 255, 255, 0.08);
+    --white-alpha-400: rgba(255, 255, 255, 0.16);
+    --white-alpha-500: rgba(255, 255, 255, 0.24);
+    --white-alpha-600: rgba(255, 255, 255, 0.36);
+    --white-alpha-700: rgba(255, 255, 255, 0.48);
+    --white-alpha-800: rgba(255, 255, 255, 0.64);
+    --white-alpha-900: rgba(255, 255, 255, 0.80);
+    
+    
+    
     --orange: #FBD38D;
     --orange-100: #EEC886;
     --orange-200: #E2BE7F;
