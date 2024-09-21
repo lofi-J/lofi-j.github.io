@@ -8,4 +8,8 @@ export default defineConfig({
     react({jsxImportSource: '@emotion/react'}),
     svgr()
   ],
+  server: {
+    port: 3000,
+    strictPort: true
+  },
 })

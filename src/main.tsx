@@ -13,8 +13,24 @@ const globalStyle = css`
     --background-color: rgb(24, 24, 24);
     --color: rgb(233, 233, 233);
     --header-background-color: #20202380;
+    
+    --gray-50: #F7FAFC;
+    --gray-100: #EDF2F7;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E0;
+    --gray-400: #A0AEC0;
+    --gray-500: #718096;
+    --gray-600: #4A5568;
+    --gray-700: #2D3748;
+    --gray-800: #1A202C;
+    --gray-900: #171923;
+    
     --orange: #FBD38D;
+    --orange-100: #EEC886;
+    --orange-200: #E2BE7F;
     --purple: #6B46C1;
+    --purple-100: #6642B7;
+    --purple-200: #603FAE;
     
     --max-header-height: 5rem;
     --max-width: 120rem;
