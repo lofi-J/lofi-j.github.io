@@ -63,7 +63,13 @@ const globalStyle = css`
     background-color: var(--background-color);
     color: var(--color);
   }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   header {
+    z-index: 10;
     position: fixed;
     top: 0;
     left: 0;
@@ -71,9 +77,6 @@ const globalStyle = css`
     padding: 0.8rem;
     background: var(--header-background-color);
     max-height: var(--max-header-height);
-  }
-  main {
-    margin-top: var(--max-header-height);
   }
   * {
     box-sizing: border-box;
