@@ -35,7 +35,7 @@ const Header = ({theme, setTheme}: IHeader) => {
         </div>
         {!isTablet && (
           <nav css={navigation}>
-            <Link to={'/'}>HOME</Link>
+            <Link to={'/'}>About Me</Link>
             <Link to={'/about'}>ABOUT</Link>
             <Link to={'/work'}>WORK</Link>
           </nav>
@@ -52,7 +52,7 @@ const Header = ({theme, setTheme}: IHeader) => {
               <RxHamburgerMenu />
               {showSideBar && (
                 <div css={sidebar(theme)}>
-                  <Link to={'/'}>Home</Link>
+                  <Link to={'/'}>About Me</Link>
                   <Link to={'/about'}>About</Link>
                   <Link to={'/work'}>Work</Link>
                 </div>
@@ -132,7 +132,7 @@ const navigation = css`
   a {
     position: relative;
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 600;
     color: var(--color);
     &:hover {
       &::after {
