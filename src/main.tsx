@@ -6,7 +6,7 @@ import App from './App.tsx';
 
 const globalStyle = css`
   @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
-  
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@100;200;300;400;500;700;800;900&display=swap');
   
   // CSS Var
   :root {
@@ -80,6 +80,9 @@ const globalStyle = css`
   }
   * {
     box-sizing: border-box;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   a {
     color: var(--color);
