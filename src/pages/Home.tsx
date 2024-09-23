@@ -31,9 +31,18 @@ const Home = () => {
               <img src={githubProfile} alt="github_profile" loading={'lazy'} />
             </div>
           </div>
-          <div className="description">
-            <div className="iLove">I ♥ React.js, Typescript</div>
-            만들고 싶은 프로젝트를 만들며 성장하는 사람입니다.
+          <div css={description}>
+            <strong>I'm</strong>
+            <div className="desc">
+              <p>유지 보수에 용이한 코드를 작성하기 위한 공을 들이고, 퍼포먼스 중심의 코드를 작성하기 위한 다양한 시도와 테스트를 진행하는 프론트엔드 개발자입니다.</p>
+              <p>새로운 도전 속에서 얻게 되는 배움을 좋아하며, 책임감과 끈기로 성장해 나아가고 있습니다.</p>
+            </div>
+          </div>
+          <div css={description}>
+            <strong>I ♥</strong>
+             <div className="desc">
+               <p>React.js, Typescript</p>
+             </div>
           </div>
         </article>
       </section>
@@ -50,7 +59,6 @@ const main = css`
     position: relative;
     padding: 0 1.6rem 0;
   }
-  
   article {
     z-index: 2;
     width: 60rem;
@@ -59,8 +67,9 @@ const main = css`
     padding: 0 1.6rem 0;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 3.2rem;
   }
+  
   ${mq('tablet')} {
     #aboutMe {
       margin-top: 4.6rem;
@@ -144,5 +153,35 @@ const profile = css`
     }
   }
 `;
+
+const description = css`
+  strong {
+    position: relative;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 0.4rem;
+      bottom: -0.2rem;
+      left: 0;
+      background-color: var(--gray-500);
+    }
+  }
+  .desc {
+    margin-top: 1.2rem;
+    p {
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin: unset;
+      &:not(:first-of-type) {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+`
 
 export default Home;
