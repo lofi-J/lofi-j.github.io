@@ -35,7 +35,15 @@ const globalStyle = css`
     --white-alpha-800: rgba(255, 255, 255, 0.64);
     --white-alpha-900: rgba(255, 255, 255, 0.80);
     
-    
+    --teal-100: #B2F5EA;
+    --teal-200: #81E6D9;
+    --teal-300: #4FD1C5;
+    --teal-400: #38B2AC;
+    --teal-500: #319795;
+    --teal-600: #2C7A7B;
+    --teal-700: #285E61;
+    --teal-800: #234E52;
+    --teal-900: #1D4044;
     
     --orange: #FBD38D;
     --orange-100: #EEC886;

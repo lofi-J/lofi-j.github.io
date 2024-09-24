@@ -1,9 +1,10 @@
-import Character3D from "../components/Character3D.tsx";
+import Character3D from '../components/Character3D.tsx';
 import { css } from '@emotion/react';
-import {mq} from "../styles/media.ts";
+import {mq} from '../styles/media.ts';
 import { Theme } from '../App.tsx';
 import useTheme from '../hooks/useTheme.ts';
 import githubProfile from '../assets/img/github_profile.png';
+import SVGIcon from "../assets/svg/svg.tsx";
 
 
 const Home = () => {
@@ -31,17 +32,22 @@ const Home = () => {
               <img src={githubProfile} alt="github_profile" loading={'lazy'} />
             </div>
           </div>
-          <div css={description}>
+          <div css={description(theme)}>
             <strong>I'm</strong>
             <div className="desc">
               <p>유지 보수에 용이한 코드를 작성하기 위한 공을 들이고, 퍼포먼스 중심의 코드를 작성하기 위한 다양한 시도와 테스트를 진행하는 프론트엔드 개발자입니다.</p>
               <p>새로운 도전 속에서 얻게 되는 배움을 좋아하며, 책임감과 끈기로 성장해 나아가고 있습니다.</p>
             </div>
           </div>
-          <div css={description}>
+          <div css={description(theme)}>
             <strong>I ♥</strong>
              <div className="desc">
-               <p>React.js, Typescript</p>
+               <p className='nowrap'>
+                 <SVGIcon name={'react'} /><em>React.js</em>
+                 <span className="m-r">,</span>
+                 <SVGIcon name={'typescript'} className={'tsSVG'} /><em>Typescript</em>
+                 조합을 사랑합니다. 😊
+               </p>
              </div>
           </div>
         </article>
@@ -77,12 +83,14 @@ const main = css`
     article {
       width: 48rem;
       margin-top: 25rem;
+      gap: 2.8rem;
     }
   }
   ${mq('mobile')} {
     article {
       width: 32rem;
       margin-top: 18rem;
+      gap: 2rem;
     }
   }
 `;
@@ -95,7 +103,7 @@ const greetting = (theme: Theme) => css`
   font-size: 1.6rem;
   b {
     font-weight: 600;
-    color: ${theme === 'dark' ? 'aqua' : 'black'};
+    color: ${theme === 'dark' ? 'var(--teal-200)' : 'black'};
   }
   
   ${mq('tablet')} {
@@ -139,7 +147,7 @@ const profile = css`
     }
     &:hover {
       &::after {
-        content: 'Github Profile';
+        content: 'Github Profile img';
         font-size: 1rem;
         font-weight: 300;
         color: var(--gray-500);
@@ -152,9 +160,38 @@ const profile = css`
       }
     }
   }
+  
+  ${mq("tablet")} {
+    .left {
+      .en_name {
+        font-size: 3rem;
+        margin-bottom: 0.8rem;
+      }
+      .trait {
+        gap: 0.5rem;
+        span {
+          font-size: 1.3rem;
+        }
+      }
+    }
+    .right {
+      img {
+        width: 8rem;
+        height: 8rem;
+      }
+    }
+  }
+  ${mq("mobile")} {
+    flex-direction: column;
+    .right {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  }
 `;
 
-const description = css`
+const description = (theme: Theme) => css`
   strong {
     position: relative;
     font-family: "M PLUS Rounded 1c", sans-serif;
@@ -173,13 +210,34 @@ const description = css`
   .desc {
     margin-top: 1.2rem;
     p {
+      display: flex;
+      align-items: center;
       font-size: 1.4rem;
       font-weight: 400;
       line-height: 1.2;
+      word-break: keep-all;
       margin: unset;
       &:not(:first-of-type) {
         margin-top: 0.5rem;
       }
+      em {
+        color: ${theme === "dark" ? "var(--teal-200)" : "var(--teal-600)"};
+        margin-right: 0.2rem;
+      }
+      .m-r {
+        margin-right: 0.5rem;
+      }
+      svg {
+        width: 1.8rem;
+        height: 1.8rem;
+        margin-right: 0.3rem;
+        &.tsSVG {
+          fill: #3178C6;
+        }
+      }
+    }
+    .nowrap {
+      white-space: nowrap;
     }
   }
 `
