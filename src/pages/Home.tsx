@@ -41,14 +41,14 @@ const Home = () => {
           </div>
           <div css={description(theme)}>
             <strong>I ♥</strong>
-             <div className="desc">
-               <p className='nowrap'>
-                 <SVGIcon name={'react'} /><em>React.js</em>
-                 <span className="m-r">,</span>
-                 <SVGIcon name={'typescript'} className={'tsSVG'} /><em>Typescript</em>
-                 조합을 사랑합니다. 😊
-               </p>
-             </div>
+            <div className="desc">
+              <p className="nowrap">
+                <SVGIcon name={'react'} /><em>React.js</em>
+                <span className="m-r">,</span>
+                <SVGIcon name={'typescript'} className={'tsSVG'} /><em>Typescript</em>
+                조합을 사랑합니다. 😊
+              </p>
+            </div>
           </div>
         </article>
       </section>
@@ -65,6 +65,7 @@ const main = css`
     position: relative;
     padding: 0 1.6rem 0;
   }
+  
   article {
     z-index: 2;
     width: 60rem;
@@ -152,7 +153,7 @@ const profile = css`
         content: 'Github Profile img';
         font-size: 1rem;
         font-weight: 300;
-        color: var(--gray-500);
+        color: var(--normal-gray);
         position: absolute;
         text-align: center;
         width: max-content;
@@ -199,15 +200,10 @@ const description = (theme: Theme) => css`
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-size: 2rem;
     font-weight: bold;
-    &::after {
-      position: absolute;
-      content: "";
-      width: 100%;
-      height: 0.4rem;
-      bottom: -0.2rem;
-      left: 0;
-      background-color: var(--gray-500);
-    }
+    text-decoration: underline;
+    text-decoration-color: var(--normal-gray);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.5rem;
   }
   .desc {
     margin-top: 1.2rem;
@@ -223,8 +219,11 @@ const description = (theme: Theme) => css`
         margin-top: 0.5rem;
       }
       em {
-        color: ${theme === "dark" ? "var(--teal-200)" : "var(--teal-600)"};
+        font-family: "Yu Gothic UI", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 600;
         margin-right: 0.2rem;
+        color: ${theme === "dark" ? "var(--teal-200)" : "var(--teal-600)"};
       }
       .m-r {
         margin-right: 0.5rem;

@@ -14,6 +14,7 @@ const globalStyle = css`
     --color: rgb(233, 233, 233);
     --header-background-color: #20202380;
     
+    --normal-gray: #525252;
     --gray-50: #F7FAFC;
     --gray-100: #EDF2F7;
     --gray-200: #E2E8F0;
