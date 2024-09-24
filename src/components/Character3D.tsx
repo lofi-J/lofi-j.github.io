@@ -4,17 +4,18 @@ import {css} from "@emotion/react";
 import {mq} from "../styles/media.ts";
 import RotatingGLB from './r3f/RotatingGLB.tsx';
 
+
 const Character3D = () => {
   
   return (
     <Canvas
       css={main}
-      camera={{ position: [-6, 6, 6], fov: 70 }}
+      camera={{position: [-6, 6, 6], fov: 75}}
     >
-      <OrbitControls minDistance={8} maxDistance={20} />
-      <ambientLight intensity={1} />
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <RotatingGLB url={'/assets/dog.glb'} />
+      <OrbitControls minDistance={8} maxDistance={20}/>
+      <ambientLight intensity={1}/>
+      <directionalLight position={[10, 10, 5]} intensity={1} castShadow={false}/>
+      <RotatingGLB url={'/assets/dog.glb'}/>
     </Canvas>
   );
 }

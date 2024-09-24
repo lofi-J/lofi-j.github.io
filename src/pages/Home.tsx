@@ -107,10 +107,12 @@ const greetting = (theme: Theme) => css`
   }
   
   ${mq('tablet')} {
-    font-size: 1.5rem;
+    padding: 1rem 0.8rem;
+    font-size: 1.4rem;
   }
   ${mq('mobile')} {
-    font-size: 1.4rem;
+    padding: 0.6rem 0;
+    font-size: 1.3rem;
     line-height: 1.5;
     display: flex;
     flex-direction: column;
