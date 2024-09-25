@@ -76,6 +76,7 @@ const globalStyle = css`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 6rem;
   }
   header {
     z-index: 10;

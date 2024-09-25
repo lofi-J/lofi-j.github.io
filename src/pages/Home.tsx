@@ -53,8 +53,19 @@ const Home = () => {
           </div>
           <div css={description(theme)}>
             <strong>Recent Projects</strong>
-            <div className="desc">
-              <Iframe videoId={'26kTMe9dyrE'} />
+            <div className="desc video_wrap">
+              <Iframe
+                name={'tetris_demo'}
+                title={'TETRIS'}
+                skills={['react', 'javascript']}
+                url={'https://react-js-tetris.up.railway.app/'}
+              />
+              <Iframe
+                name={'typinglab_demo'}
+                title={'TypingLab'}
+                skills={['next', 'typescript']}
+                url={'https://typinglab.netlify.app/'}
+              />
             </div>
           </div>
         </article>
@@ -246,6 +257,19 @@ const description = (theme: Theme) => css`
     }
     .nowrap {
       white-space: nowrap;
+    }
+  }
+  .video_wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 2rem;
+    ${mq('tablet')} {
+      gap: 2rem;
+    }
+    ${mq('mobile')} {
+      flex-direction: column;
+      gap: 3rem;
     }
   }
 `
