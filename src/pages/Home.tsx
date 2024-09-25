@@ -5,6 +5,7 @@ import { Theme } from '../App.tsx';
 import useTheme from '../hooks/useTheme.ts';
 import githubProfile from '../assets/img/github_profile.png';
 import SVGIcon from "../assets/svg/svg.tsx";
+import Iframe from "../components/youtube/Iframe.tsx";
 
 
 const Home = () => {
@@ -29,7 +30,7 @@ const Home = () => {
               </div>
             </div>
             <div className="right">
-              <img src={githubProfile} alt="github_profile" loading={'lazy'} />
+              <img src={githubProfile} alt="github_profile" loading={'lazy'}/>
             </div>
           </div>
           <div css={description(theme)}>
@@ -43,11 +44,17 @@ const Home = () => {
             <strong>I ♥</strong>
             <div className="desc">
               <p className="nowrap">
-                <SVGIcon name={'react'} /><em>React.js</em>
+                <SVGIcon name={'react'}/><em>React.js</em>
                 <span className="m-r">,</span>
-                <SVGIcon name={'typescript'} className={'tsSVG'} /><em>Typescript</em>
+                <SVGIcon name={'typescript'} className={'tsSVG'}/><em>Typescript</em>
                 조합을 사랑합니다. 😊
               </p>
+            </div>
+          </div>
+          <div css={description(theme)}>
+            <strong>Recent Projects</strong>
+            <div className="desc">
+              <Iframe videoId={'26kTMe9dyrE'} />
             </div>
           </div>
         </article>
