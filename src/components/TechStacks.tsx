@@ -3,6 +3,8 @@ import TechStack from "../static/TechStacks";
 import SVGIcon from '../assets/svg/svg.tsx';
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
+import { Theme } from '../App.tsx';
+import useTheme from '../hooks/useTheme.ts';
 
 
 interface ITechStacks {
@@ -10,9 +12,10 @@ interface ITechStacks {
 }
 
 const TechStacks = ({type}: ITechStacks) => {
+  const {theme} = useTheme();
   
   return (
-    <div css={main}>
+    <div css={main(theme)}>
       <div className="title">
         <span>{TechStack[type].fullName}</span>
       </div>
@@ -37,7 +40,7 @@ const TechStacks = ({type}: ITechStacks) => {
   );
 }
 
-const main = css`
+const main = (theme: Theme) => css`
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -61,14 +64,26 @@ const main = css`
     svg {
       width: 2rem;
       height: 2rem;
+      &:hover {
+        transform: scale(1.15);
+      }
     }
-    .next, .railway, .github {
+    /* svg icon exceptions */
+    .javascript {
+       background-color: ${theme === 'dark' ? 'var(--background-color)' : 'var(--color)'};
+    }
+    .next {
+      border-color: ${theme === 'dark' ? 'transparent' : 'var(--background-color)'};
+      background-color: ${theme === 'dark' ? '' : 'var(--background-color)'};
+    }
+    .cssmodule, .githubpages {
+      stroke: var(--normal-gray);
+    }
+    .railway, .github, .next {
+      fill: black;
+      background-color: white;
+      border: 0.1rem solid ${theme === 'dark' ? 'var(--color)' : 'var(--background-color)'};
       border-radius: 50%;
-      border: 0.1rem solid var(--color);
-      background-color: var(--color);
-    }
-    .cssmodule {
-      stroke: var(--origin-color);
     }
   }
 `;

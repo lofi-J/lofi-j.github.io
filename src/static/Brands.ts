@@ -1,22 +1,22 @@
 export const Brands = {
   react: {
-    color: '#000',
-    bgColor: '#61DAFB',
+    color: '',
+    bgColor: '',
     fullName: 'React.js',
   },
   next: {
-    color: '#fff',
-    bgColor: '#000',
+    color: '#000',
+    bgColor: '#fff',
     fullName: 'Next.js',
   },
   typescript: {
-    color: '#000',
-    bgColor: '#3178C6',
+    color: '#3178C6',
+    bgColor: '#000',
     fullName: 'TypeScript',
   },
   javascript: {
-    color: '#000',
-    bgColor: '#F7DF1E',
+    color: '#F7DF1E',
+    bgColor: '#000',
     fullName: 'JavaScript',
   }
 } as const;

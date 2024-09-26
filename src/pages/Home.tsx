@@ -73,7 +73,7 @@ const Home = () => {
             <strong>Tech</strong>
             <div className="desc tech-container">
               <TechStacks type={'frontend'} />
-              <TechStacks type={'style'} />
+              <TechStacks type={'styles'} />
               <TechStacks type={'deployment'} />
               <TechStacks type={'devOps'} />
             </div>

@@ -15,6 +15,9 @@ import RailwayIcon from "./railway.svg?react";
 import CssModuleIcon from "./cssmodules.svg?react";
 import StyledComponentsIcon from "./styledcomponents.svg?react";
 import EmotionIcon from "./emotion.svg?react";
+import RecoilIcon from "./recoil.svg?react";
+import ReduxIcon from "./redux.svg?react";
+import GithubPagesIcon from "./githubpages.svg?react";
 
 
 // svgObj 객체 정의
@@ -35,6 +38,9 @@ const svgObj = {
   cssmodule: CssModuleIcon,
   styledcomponents: StyledComponentsIcon,
   emotion: EmotionIcon,
+  recoil: RecoilIcon,
+  redux: ReduxIcon,
+  githubpages: GithubPagesIcon,
 };
 
 // SVGIcon 컴포넌트
@@ -47,14 +53,14 @@ interface ISVGIcon {
   bgColor?: string;
 }
 
-const SVGIcon = ({ name, className, color, ...props }: ISVGIcon) => {
+const SVGIcon = ({ name, className, color, bgColor, ...props }: ISVGIcon) => {
   const IconComponent = svgObj[name];
   
   if (!IconComponent) {
     return null;
   }
   
-  return <IconComponent className={className} style={{fill: color}} {...props} />
+  return <IconComponent className={className} style={{fill: color, backgroundColor: bgColor}} {...props} />
 };
 
 export default SVGIcon;

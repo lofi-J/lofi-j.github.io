@@ -2,6 +2,7 @@ import {css} from "@emotion/react";
 import { useRef, useState } from 'react';
 import { Brands } from '../../static/Brands.ts';
 import { IoIosLink } from "react-icons/io";
+import SVGIcon from '../../assets/svg/svg.tsx';
 
 
 interface IframeProps {
@@ -37,7 +38,16 @@ const Iframe = ({name, title, skills, url}: IframeProps) => {
         onMouseEnter={() => play()}
         onMouseLeave={() => handleReset()}
       >
-        {!isPlaying && <img className="thumbnail" src={`/assets/thumbnail/${name}.png`} alt={`${name}.png`} />}
+        {!isPlaying && (
+          <div className={'thumbnail-wrap'}>
+            <div className={'badge-wrap'}>
+              {skills.map((skill, i) => (
+                <SVGIcon name={skill} key={`badge-${i}`} color={Brands[skill].color} bgColor={Brands[skill].bgColor} className={skill} />
+              ))}
+            </div>
+            <img className="thumbnail" src={`/assets/thumbnail/${name}.png`} alt={`${name}.png`} />
+          </div>
+        )}
         <video
           ref={playerRef}
           controls={false}
@@ -57,16 +67,6 @@ const Iframe = ({name, title, skills, url}: IframeProps) => {
         </a>
         <IoIosLink />
       </div>
-      <div className='description'>
-        {skills.map((skill, i) => {
-          const obj = Brands[skill];
-          return (
-            <b key={i} css={badge(obj.color, obj.bgColor)} id={`project_${i}`}>
-              {obj.fullName}
-            </b>
-          );
-        })}
-      </div>
     </div>
   );
 }
@@ -77,12 +77,29 @@ const main = css`
   align-items: center;
   .video-container {
     position: relative;
-    .thumbnail {
+    .thumbnail-wrap {
       position: absolute;
-      width: 100%;
       height: 100%;
-      border-radius: 8px;
-      border: 1px solid var(--background-color);
+      .badge-wrap {
+        position: absolute;
+        padding: 1rem 0 0 1rem;
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-right: 0.5rem;
+        }
+        .next {
+          border-radius: 50%;
+          border: 1px solid white;
+        }
+      }
+      .thumbnail {
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        border: 1px solid var(--background-color);
+      }
     }
   }
   video {
@@ -126,15 +143,5 @@ const main = css`
     margin-top: 1rem;
   }
 `;
-
-const badge = (color: string, bgColor: string) => css`
-  font-family: -apple-system sans-serif;
-  color: ${color};
-  font-size: 1.4rem;
-  margin-right: 1rem;
-  padding: 0.1rem 0.6rem;
-  background-color: ${bgColor};
-  border-radius: 6px;
-`
 
 export default Iframe;
