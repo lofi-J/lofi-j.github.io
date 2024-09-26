@@ -98,19 +98,18 @@ const main = css`
     }
   }
   .description {
-    font-family: -apple-system sans-serif;
-    font-size: 1.2rem;
-    margin-top: 0.6rem;
+    margin-top: 1rem;
   }
 `;
 
 const badge = (color: string, bgColor: string) => css`
+  font-family: -apple-system sans-serif;
   color: ${color};
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.4rem;
   margin-right: 1rem;
-  padding: 0.2rem 0.8rem;
+  padding: 0.1rem 0.6rem;
   background-color: ${bgColor};
+  border-radius: 6px;
 `
 
 export default Iframe;
