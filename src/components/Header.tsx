@@ -29,15 +29,15 @@ const Header = ({theme, setTheme}: IHeader) => {
   return (
     <header css={header}>
       <div className={'container'}>
-        <div css={logoWrap} className={'logo-wrap'}>
+        <Link to={'/'} css={logoWrap} className={'logo-wrap'}>
           <SVGIcon name={'hmm'} />
           <span className={'name'}>Seong Jun</span>
-        </div>
+        </Link>
         {!isTablet && (
           <nav css={navigation}>
-            <Link to={'/'}>About Me</Link>
-            <Link to={'/about'}>ABOUT</Link>
-            <Link to={'/work'}>WORK</Link>
+            <Link to={'/'}>Home</Link>
+            <Link to={'/works'}>Works</Link>
+            <Link to={'/playground'}>Playground</Link>
           </nav>
         )}
         <div className={'toggle-wrap'}>
@@ -53,8 +53,8 @@ const Header = ({theme, setTheme}: IHeader) => {
               {showSideBar && (
                 <div css={sidebar(theme)}>
                   <Link to={'/'}>About Me</Link>
-                  <Link to={'/about'}>About</Link>
-                  <Link to={'/work'}>Work</Link>
+                  <Link to={'/works'}>Works</Link>
+                  <Link to={'/playground'}>Playground</Link>
                 </div>
               )}
             </div>

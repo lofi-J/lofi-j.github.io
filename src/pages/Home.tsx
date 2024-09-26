@@ -7,6 +7,7 @@ import githubProfile from '../assets/img/github_profile.png';
 import SVGIcon from "../assets/svg/svg.tsx";
 import Iframe from "../components/youtube/Iframe.tsx";
 import TechStacks from "../components/TechStacks.tsx";
+import Button from '../components/button/Button.tsx';
 
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
     <main css={main}>
       <section id="aboutMe">
         <Character3D />
-        <article>
+        <div className="container">
           <div css={greetting(theme)}>
             <span className="line1">안녕하세요! </span>
             <span className="line2">Frontend 개발자 <b>조성준</b>입니다.</span>
@@ -30,8 +31,8 @@ const Home = () => {
                 <span>Learning Mindset</span>
               </div>
             </div>
-            <div className="right">
-              <img src={githubProfile} alt="github_profile" loading={'lazy'}/>
+            <div className="right" onClick={() => window.open('https://github.com/lofi-j', '_blank')}>
+              <img src={githubProfile} alt="github_profile" loading={'lazy'} />
             </div>
           </div>
           <div css={description}>
@@ -78,7 +79,15 @@ const Home = () => {
               <TechStacks type={'devOps'} />
             </div>
           </div>
-        </article>
+          <div css={bottom}>
+            <Button
+              text={'Github'}
+              onClick={() => window.open('http://github.com/lofi-j', '_blank')}
+              color={'red'}
+            />
+            <Button text={'Works'} onClick={() => window.open('http://github.com/lofi-j', '_blank')} />
+          </div>
+          </div>
       </section>
     </main>
   );
@@ -94,7 +103,7 @@ const main = css`
     padding: 0 1.6rem 0;
   }
   
-  article {
+  .container {
     z-index: 2;
     width: 60rem;
     /* 3D 오브젝트 Canvas 사이즈와 함께 margin-top이 조정되어야 함 */
@@ -170,13 +179,21 @@ const profile = css`
     }
   }
   .right {
+    cursor: pointer;
     position: relative;
     img {
-      padding: 2px;
+      padding: 1px;
       border-radius: 50%;
       border: 1px solid var(--gray-500);
       width: 10rem;
       height: 10rem;
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        padding: unset;
+        transform: scale(1.1);
+        border-width: 2px;
+        border-color: var(--accent-teal);
+      }
     }
     &:hover {
       &::after {
@@ -291,5 +308,14 @@ const description = css`
     gap: 1.8rem;
   }
 `
+
+const bottom = css`
+  padding-top: 5rem;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+`;
 
 export default Home;

@@ -107,6 +107,21 @@ const globalStyle = css`
     color: var(--color);
     text-decoration: unset;
   }
+  button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+  }
+  
+  // keyframes
+  @keyframes spin {
+    from { transform: rotate(0); }
+    to { transform: rotate(359deg); }
+  }
+  @keyframes minusSpin {
+    from { transform: rotate(0); }
+    to { transform: rotate(-359deg); }
+  }
 `;
 
 createRoot(document.getElementById('root')!).render(
