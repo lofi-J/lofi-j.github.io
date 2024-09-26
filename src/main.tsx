@@ -13,6 +13,8 @@ const globalStyle = css`
     --background-color: rgb(24, 24, 24);
     --color: rgb(233, 233, 233);
     --header-background-color: #20202380;
+    --origin-color: #fff;
+    --origin-background: #000;
     
     --normal-gray: #525252;
     --gray-50: #F7FAFC;
@@ -47,6 +49,7 @@ const globalStyle = css`
     --teal-900: #1D4044;
     
     --accent-teal: var(--teal-200);
+    --accent-teal-background: rgba(129, 230, 217, 0.12);
     --orange: #FBD38D;
     --orange-100: #EEC886;
     --orange-200: #E2BE7F;
@@ -61,8 +64,12 @@ const globalStyle = css`
   [data-theme='light'] {
     --background-color: rgb(237, 225, 210);
     --color: rgb(20, 24, 33);
+    --origin-color: #000;
+    --origin-background: #fff;
+    
     --header-background-color: #ffffff40;
     --accent-teal: var(--teal-400);
+    --accent-teal-background: var(--teal-100);
   }
   
   // initial CSS

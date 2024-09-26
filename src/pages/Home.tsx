@@ -6,7 +6,7 @@ import useTheme from '../hooks/useTheme.ts';
 import githubProfile from '../assets/img/github_profile.png';
 import SVGIcon from "../assets/svg/svg.tsx";
 import Iframe from "../components/youtube/Iframe.tsx";
-import TeckStacks from "../components/TeckStacks.tsx";
+import TechStacks from "../components/TechStacks.tsx";
 
 
 const Home = () => {
@@ -45,9 +45,9 @@ const Home = () => {
             <strong>I ♥</strong>
             <div className="desc">
               <p className="nowrap">
-                <SVGIcon name={'react'}/><em>React.js</em>
+                <SVGIcon name={'react'} /><em>React.js</em>
                 <span className="m-r">,</span>
-                <SVGIcon name={'typescript'} className={'tsSVG'}/><em>Typescript</em>
+                <SVGIcon name={'typescript'} className={'tsSVG'} /><em>Typescript</em>
                 조합을 사랑합니다. 😊
               </p>
             </div>
@@ -72,9 +72,10 @@ const Home = () => {
           <div css={description}>
             <strong>Tech</strong>
             <div className="desc tech-container">
-              <TeckStacks type={'frontend'} />
-              <TeckStacks type={'deployment'} />
-              <TeckStacks type={'devOps'} />
+              <TechStacks type={'frontend'} />
+              <TechStacks type={'style'} />
+              <TechStacks type={'deployment'} />
+              <TechStacks type={'devOps'} />
             </div>
           </div>
         </article>
@@ -285,6 +286,9 @@ const description = css`
   }
   .tech-container {
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
   }
 `
 
