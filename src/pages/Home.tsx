@@ -6,6 +6,7 @@ import useTheme from '../hooks/useTheme.ts';
 import githubProfile from '../assets/img/github_profile.png';
 import SVGIcon from "../assets/svg/svg.tsx";
 import Iframe from "../components/youtube/Iframe.tsx";
+import TeckStacks from "../components/TeckStacks.tsx";
 
 
 const Home = () => {
@@ -33,14 +34,14 @@ const Home = () => {
               <img src={githubProfile} alt="github_profile" loading={'lazy'}/>
             </div>
           </div>
-          <div css={description(theme)}>
+          <div css={description}>
             <strong>I'm</strong>
             <div className="desc">
               <p>유지 보수에 용이한 코드를 작성하기 위한 공을 들이고, 퍼포먼스 중심의 코드를 작성하기 위한 다양한 시도와 테스트를 진행하는 프론트엔드 개발자입니다.</p>
               <p>새로운 도전 속에서 얻게 되는 배움을 좋아하며, 책임감과 끈기로 성장해 나아가고 있습니다.</p>
             </div>
           </div>
-          <div css={description(theme)}>
+          <div css={description}>
             <strong>I ♥</strong>
             <div className="desc">
               <p className="nowrap">
@@ -51,8 +52,8 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div css={description(theme)}>
-            <strong>Recent Projects</strong>
+          <div css={description}>
+            <strong>Work</strong>
             <div className="desc video_wrap">
               <Iframe
                 name={'tetris_demo'}
@@ -66,6 +67,14 @@ const Home = () => {
                 skills={['next', 'typescript']}
                 url={'https://typinglab.netlify.app/'}
               />
+            </div>
+          </div>
+          <div css={description}>
+            <strong>Tech</strong>
+            <div className="desc tech-container">
+              <TeckStacks type={'frontend'} />
+              <TeckStacks type={'deployment'} />
+              <TeckStacks type={'devOps'} />
             </div>
           </div>
         </article>
@@ -99,12 +108,14 @@ const main = css`
     #aboutMe {
       margin-top: 4.6rem;
     }
+    
     article {
       width: 48rem;
       margin-top: 25rem;
       gap: 2.8rem;
     }
   }
+  
   ${mq('mobile')} {
     article {
       width: 32rem;
@@ -212,7 +223,7 @@ const profile = css`
   }
 `;
 
-const description = (theme: Theme) => css`
+const description = css`
   strong {
     position: relative;
     font-family: "M PLUS Rounded 1c", sans-serif;
@@ -241,7 +252,7 @@ const description = (theme: Theme) => css`
         font-size: 1.3rem;
         font-weight: 600;
         margin-right: 0.2rem;
-        color: ${theme === "dark" ? "var(--teal-200)" : "var(--teal-600)"};
+        color: var(--accent-teal);
       }
       .m-r {
         margin-right: 0.5rem;
@@ -271,6 +282,9 @@ const description = (theme: Theme) => css`
       flex-direction: column;
       gap: 3rem;
     }
+  }
+  .tech-container {
+    margin-top: 2rem;
   }
 `
 

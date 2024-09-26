@@ -46,6 +46,7 @@ const globalStyle = css`
     --teal-800: #234E52;
     --teal-900: #1D4044;
     
+    --accent-teal: var(--teal-200);
     --orange: #FBD38D;
     --orange-100: #EEC886;
     --orange-200: #E2BE7F;
@@ -61,6 +62,7 @@ const globalStyle = css`
     --background-color: rgb(237, 225, 210);
     --color: rgb(20, 24, 33);
     --header-background-color: #ffffff40;
+    --accent-teal: var(--teal-400);
   }
   
   // initial CSS

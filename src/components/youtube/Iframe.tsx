@@ -1,6 +1,8 @@
 import {css} from "@emotion/react";
-import { Brands } from '../../utills/Brands.ts';
 import { useRef, useState } from 'react';
+import { Brands } from '../../static/Brands.ts';
+import { IoIosLink } from "react-icons/io";
+
 
 interface IframeProps {
   name: 'typinglab_demo' | 'tetris_demo';
@@ -31,26 +33,30 @@ const Iframe = ({name, title, skills, url}: IframeProps) => {
   
   return (
     <div id='video' css={main}>
-      <div className="video-container">
+      <div className="video-container"
+        onMouseEnter={() => play()}
+        onMouseLeave={() => handleReset()}
+      >
         {!isPlaying && <img className="thumbnail" src={`/assets/thumbnail/${name}.png`} alt={`${name}.png`} />}
         <video
           ref={playerRef}
           controls={false}
           muted
-          onMouseEnter={() => play()}
-          onMouseLeave={() => handleReset()}
         >
           <source src={`/assets/mp4/${name}.mp4`} type="video/mp4" />
         </video>
       </div>
-      <a
-        className='title'
-        target='_blank'
-        rel='noopener noreferrer'
-        href={url}
-      >
-        {title}
-      </a>
+      <div className="link-wrap">
+        <a
+          className='title'
+          target='_blank'
+          rel='noopener noreferrer'
+          href={url}
+        >
+          {title}
+        </a>
+        <IoIosLink />
+      </div>
       <div className='description'>
         {skills.map((skill, i) => {
           const obj = Brands[skill];
@@ -85,16 +91,35 @@ const main = css`
     border-radius: 8px;
     border: 1px solid var(--background-color);
   }
-  .title {
+  .link-wrap {
     cursor: pointer;
-    font-family: -apple-system sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
     padding-top: 0.8rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+    .title {
+      font-family: -apple-system sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    svg {
+      width: 2.2rem;
+      height: 1.3rem;
+      display: none;
+      position: absolute;
+      right: -2.2rem;
+      fill: var(--accent-teal);
+    }
     &:hover {
-      text-decoration: underline;
-      text-decoration-color: var(--normal-gray);
-      text-decoration-thickness: 0.2rem;
+      .title {
+        text-decoration: underline;
+        text-decoration-color: var(--accent-teal);
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1px;
+      }
+      svg {
+        display: block;
+      }
     }
   }
   .description {
