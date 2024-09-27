@@ -5,6 +5,7 @@ import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
 import { Theme } from '../App.tsx';
 import useTheme from '../hooks/useTheme.ts';
+import {mq} from "../styles/media.ts";
 
 
 interface ITechStacks {
@@ -84,6 +85,17 @@ const main = (theme: Theme) => css`
       background-color: white;
       border: 0.1rem solid ${theme === 'dark' ? 'var(--color)' : 'var(--background-color)'};
       border-radius: 50%;
+    }
+  }
+  ${mq('mobile')} {
+    .title {
+      min-width: 8rem;
+      span {
+        font-size: 1.2rem;
+      }
+    }
+    .wrap {
+      gap: 0.6rem;
     }
   }
 `;

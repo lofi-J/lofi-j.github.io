@@ -8,10 +8,13 @@ import SVGIcon from "../assets/svg/svg.tsx";
 import Iframe from "../components/youtube/Iframe.tsx";
 import TechStacks from "../components/TechStacks.tsx";
 import Button from '../components/button/Button.tsx';
+import {useNavigate} from "react-router-dom";
+import { SlArrowRight } from "react-icons/sl";
 
 
 const Home = () => {
   const { theme } = useTheme();
+  const navigate = useNavigate();
   
   return (
     <main css={main}>
@@ -79,15 +82,29 @@ const Home = () => {
               <TechStacks type={'devOps'} />
             </div>
           </div>
-          <div css={bottom}>
-            <Button
-              text={'Github'}
-              onClick={() => window.open('http://github.com/lofi-j', '_blank')}
-              color={'red'}
-            />
-            <Button text={'Works'} onClick={() => window.open('http://github.com/lofi-j', '_blank')} />
+          <div css={description}>
+            <strong>More</strong>
+            <div className="desc">
+              <p>For more details, visit my Repositories</p>
+              <div className="btn-wrap">
+                <Button
+                  text={'Works'}
+                  onClick={() => navigate('works')}
+                  height={3.5}
+                  color={'var(--color)'}
+                  suffix={<SlArrowRight />}
+                />
+                <Button
+                  text={'Github'}
+                  onClick={() => window.open('http://github.com/lofi-j', '_blank')}
+                  height={3.5}
+                  color={'var(--color)'}
+                  prefix={<SVGIcon name={'github'} color={'#000'} />}
+                />
+              </div>
+            </div>
           </div>
-          </div>
+        </div>
       </section>
     </main>
   );
@@ -119,7 +136,7 @@ const main = css`
       margin-top: 4.6rem;
     }
     
-    article {
+    .container {
       width: 48rem;
       margin-top: 25rem;
       gap: 2.8rem;
@@ -127,7 +144,11 @@ const main = css`
   }
   
   ${mq('mobile')} {
-    article {
+    #aboutMe {
+      padding: 0 0.4rem 0;
+    }
+    .container {
+      padding: 0 0.4rem 0;
       width: 32rem;
       margin-top: 18rem;
       gap: 2rem;
@@ -289,33 +310,36 @@ const description = css`
     }
   }
   .video_wrap {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 3rem;
-    margin-top: 2rem;
-    ${mq('tablet')} {
-      gap: 2rem;
-    }
-    ${mq('mobile')} {
-      flex-direction: column;
-      gap: 3rem;
-    }
+    gap: 1rem;
   }
   .tech-container {
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
   }
+  .btn-wrap {
+    margin-top: 1.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+  ${mq('tablet')} {
+    strong {
+      font-size: 1.8rem;
+    }
+    .video_wrap {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  ${mq('mobile')} {
+    .video_wrap {
+      flex-direction: column;
+    }
+  }
 `
-
-const bottom = css`
-  padding-top: 5rem;
-  background: gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-`;
 
 export default Home;

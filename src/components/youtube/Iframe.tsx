@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { Brands } from '../../static/Brands.ts';
 import { IoIosLink } from "react-icons/io";
 import SVGIcon from '../../assets/svg/svg.tsx';
+import {mq} from "../../styles/media.ts";
 
 
 interface IframeProps {
@@ -77,6 +78,7 @@ const main = css`
   align-items: center;
   .video-container {
     position: relative;
+    max-width: 30rem;
     .thumbnail-wrap {
       position: absolute;
       height: 100%;
@@ -141,6 +143,12 @@ const main = css`
   }
   .description {
     margin-top: 1rem;
+  }
+  
+  ${mq('tablet')} {
+    .video-container {
+      flex-wrap: wrap;
+    }
   }
 `;
 

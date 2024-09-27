@@ -48,8 +48,15 @@ const globalStyle = css`
     --teal-800: #234E52;
     --teal-900: #1D4044;
     
+    // teal accent
     --accent-teal: var(--teal-200);
     --accent-teal-background: rgba(129, 230, 217, 0.12);
+    --accent-teal-background-hover: rgba(129, 230, 217, 0.5);
+    
+    // button
+    --button-bg: var(--teal-500);
+    --button-bg-hover: var(--teal-600);
+    
     --orange: #FBD38D;
     --orange-100: #EEC886;
     --orange-200: #E2BE7F;
@@ -68,8 +75,14 @@ const globalStyle = css`
     --origin-background: #fff;
     
     --header-background-color: #ffffff40;
+    
+    // accent teal
     --accent-teal: var(--teal-400);
     --accent-teal-background: var(--teal-100);
+    --accent-teal-background-hover: var(--teal-200);
+    // button
+    --button-bg: var(--teal-100);
+    --button-bg-hover: var(--teal-200);
   }
   
   // initial CSS
