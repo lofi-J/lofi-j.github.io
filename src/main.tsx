@@ -54,8 +54,8 @@ const globalStyle = css`
     --accent-teal-background-hover: rgba(129, 230, 217, 0.5);
     
     // button
-    --button-bg: var(--teal-500);
-    --button-bg-hover: var(--teal-600);
+    --button-bg: var(--accent-teal-background);
+    --button-bg-hover: var(--accent-teal-background-hover);
     
     --orange: #FBD38D;
     --orange-100: #EEC886;
@@ -88,6 +88,16 @@ const globalStyle = css`
   // initial CSS
   html {
     font-size: 62.5%;
+    // scrollbar custom
+    scrollbar-width: thin;
+    scrollbar-color: var(--normal-gray) var(--background-color);
+  }
+  body {
+    
+    &::-webkit-scrollbar {
+      scrollbar-width: thin;
+      scrollbar-color: var(--normal-gray) var(--background-color);
+    }
   }
   main, body {
     margin: 0;

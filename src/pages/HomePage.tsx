@@ -1,4 +1,3 @@
-import Character3D from '../components/Character3D.tsx';
 import { css } from '@emotion/react';
 import {mq} from '../styles/media.ts';
 import { Theme } from '../App.tsx';
@@ -12,14 +11,13 @@ import {useNavigate} from "react-router-dom";
 import { SlArrowRight } from "react-icons/sl";
 
 
-const Home = () => {
+const HomePage = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
   
   return (
     <main css={main}>
       <section id="aboutMe">
-        <Character3D />
         <div className="container">
           <div css={greetting(theme)}>
             <span className="line1">안녕하세요! </span>
@@ -342,4 +340,4 @@ const description = css`
   }
 `
 
-export default Home;
+export default HomePage;

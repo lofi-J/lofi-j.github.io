@@ -1,9 +1,11 @@
 import {BrowserRouter} from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout.tsx";
-import Home from "./pages/Home.tsx";
+import HomePage from "./pages/HomePage.tsx";
 import FloatingGuide from './components/button/FloatingGuide.tsx';
 import { ThemeProvider } from './modules/ThemeContext.tsx';
+import WorksPage from './pages/WorksPage.tsx';
+import PlaygroundPage from './pages/PlaygroundPage.tsx';
 
 
 export type Theme = 'light' | 'dark';
@@ -16,13 +18,13 @@ function App() {
         <FloatingGuide />
         <Layout />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/works' element={<>about</>} />
-          <Route path='/playground' element={<>work</>} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/works' element={<WorksPage />} />
+          <Route path='/playground' element={<PlaygroundPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
   )
 }
 
-export default App
+export default App;
