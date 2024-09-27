@@ -17,8 +17,8 @@ function App() {
         <Layout />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/about' element={<>about</>} />
-          <Route path='/work' element={<>work</>} />
+          <Route path='/works' element={<>about</>} />
+          <Route path='/playground' element={<>work</>} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

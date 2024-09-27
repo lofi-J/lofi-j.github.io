@@ -5,7 +5,7 @@ import {IoSunnyOutline} from "react-icons/io5";
 import {AiFillMoon} from "react-icons/ai";
 import {RxHamburgerMenu} from "react-icons/rx";
 import SVGIcon from "../assets/svg/svg.tsx";
-import {Link} from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom';
 import {mq} from "../styles/media.ts";
 import useMediaQuery from "../hooks/useMediaQuery.ts";
 import {breakpoint} from "../styles/media.ts";
@@ -18,6 +18,7 @@ interface IHeader {
 }
 
 const Header = ({theme, setTheme}: IHeader) => {
+  const pathname = useLocation().pathname;
   const isTablet = useMediaQuery('tablet');
   const [showSideBar, setShowSideBar] = useState(false);
   const ref = useOutSideClick<HTMLDivElement>(() => setShowSideBar(false));
@@ -26,8 +27,17 @@ const Header = ({theme, setTheme}: IHeader) => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   }
   
+  const generatePathname = () => {
+    const pathMap: {[key: string]: string} = {
+      '/': 'home',
+      '/works': 'works',
+      '/playground': 'playground',
+    };
+    return pathMap[pathname] || '';
+  }
+  
   return (
-    <header css={header}>
+    <header css={header(generatePathname())}>
       <div className={'container'}>
         <Link to={'/'} css={logoWrap} className={'logo-wrap'}>
           <SVGIcon name={'hmm'} />
@@ -35,9 +45,9 @@ const Header = ({theme, setTheme}: IHeader) => {
         </Link>
         {!isTablet && (
           <nav css={navigation}>
-            <Link to={'/'}>Home</Link>
-            <Link to={'/works'}>Works</Link>
-            <Link to={'/playground'}>Playground</Link>
+            <Link to={'/'} className='home'>Home</Link>
+            <Link to={'/works'} className='works'>Works</Link>
+            <Link to={'/playground'} className='playground'>Playground</Link>
           </nav>
         )}
         <div className={'toggle-wrap'}>
@@ -52,9 +62,9 @@ const Header = ({theme, setTheme}: IHeader) => {
               <RxHamburgerMenu />
               {showSideBar && (
                 <div css={sidebar(theme)}>
-                  <Link to={'/'}>About Me</Link>
-                  <Link to={'/works'}>Works</Link>
-                  <Link to={'/playground'}>Playground</Link>
+                  <Link to={'/'} className='home'>Home</Link>
+                  <Link to={'/works'} className='works'>Works</Link>
+                  <Link to={'/playground'} className='playground'>Playground</Link>
                 </div>
               )}
             </div>
@@ -65,7 +75,7 @@ const Header = ({theme, setTheme}: IHeader) => {
   );
 }
 
-const header = css`
+const header = (pathname: string) => css`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -76,6 +86,20 @@ const header = css`
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  
+  /* active */
+  .${pathname} {
+    background-color: var(--accent-teal-background-hover);
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.2rem;
+      width: 100%;
+      height: 0.2rem;
+      background-color: var(--accent-teal);
+    }
   }
   
   /* media */
@@ -134,15 +158,16 @@ const navigation = css`
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--color);
+    padding: 0.6rem 0.4rem;
     &:hover {
       &::after {
         content: "";
         position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: -0.2rem;
         width: 100%;
-        height: 0.1rem;
-        background-color: var(--color);
+        height: 0.2rem;
+        background-color: var(--accent-teal);
       }
     }
   }
@@ -195,14 +220,20 @@ const sidebar = (theme: Theme) => css`
   top: 5rem;
   right: 0;
   width: 10rem;
-  border: 1px solid ${theme === 'dark' ? 'var(--white-alpha-500)' : 'var(--gray-300)'};
-  background-color: ${theme === 'dark' ? 'var(--white-alpha-400)' : 'white'};
+  border: 1px solid ${theme === 'dark' ? 'var(--white-alpha-400)' : 'var(--gray-300)'};
+  background-color: ${theme === 'dark' ? 'var(--white-alpha-500)' : 'white'};
   border-radius: 4px;
   a {
+    position: relative;
+    font-family: "M PLUS Rounded 1c", sans-serif;
     font-size: 1.3rem;
+    font-weight: 500;
     padding: 0.8rem 0 0.8rem 0.8rem;
     &:hover {
-      background-color: ${theme === 'dark' ? 'var(--white-alpha-400)' : 'var(--gray-200)'}
+      font-weight: bold;
+    }
+    &::after {
+      display: none;
     }
   }
 `;
