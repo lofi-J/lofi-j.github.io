@@ -1,5 +1,6 @@
 import {css, SerializedStyles} from '@emotion/react';
 import {ReactNode} from "react";
+import {mq} from "../../styles/media.ts";
 
 interface IButton {
   text: string;
@@ -53,5 +54,11 @@ const main = (props: Omit<IButton, 'text' | 'onClick'>) => css`
   }
   &:hover {
     background-color: ${!props.bgColor && 'var(--button-bg-hover)'};
+  }
+  // default setting
+  ${mq('mobile')} {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+    height: 3rem;
   }
 `;
