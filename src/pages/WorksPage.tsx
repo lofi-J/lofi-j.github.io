@@ -10,10 +10,10 @@ const WorksPage = () => {
       <section className="frame-container">
         <div className="title">Works</div>
         <div className="grid-container">
-          <WorkCard {...Works["homepage"]} />
-          <WorkCard {...Works["typinglab"]} />
-          <WorkCard {...Works["tetris"]} />
-          <WorkCard {...Works["sorting"]} />
+          <WorkCard {...Works['homepage']} />
+          <WorkCard {...Works['typinglab']} />
+          <WorkCard {...Works['tetris']} />
+          <WorkCard {...Works['sorting']} />
         </div>
       </section>
     </main>
@@ -38,6 +38,7 @@ const main = css`
       display: grid;
       grid-template-rows: repeat(2, 1fr);
       grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
     }
   }
   
