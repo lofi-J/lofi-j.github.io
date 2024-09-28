@@ -46,7 +46,6 @@ const Iframe = ({name, title, skills, url}: IframeProps) => {
                 <SVGIcon name={skill} key={`badge-${i}`} color={Brands[skill].color} bgColor={Brands[skill].bgColor} className={skill} />
               ))}
             </div>
-            <img className="thumbnail" src={`/assets/thumbnail/${name}.png`} alt={`${name}.png`} />
           </div>
         )}
         <video
@@ -83,6 +82,7 @@ const main = css`
       position: absolute;
       height: 100%;
       .badge-wrap {
+        display: flex;
         position: absolute;
         padding: 1rem 0 0 1rem;
         svg {
@@ -94,13 +94,6 @@ const main = css`
           border-radius: 50%;
           border: 1px solid white;
         }
-      }
-      .thumbnail {
-        z-index: 2;
-        width: 100%;
-        height: 100%;
-        border-radius: 8px;
-        border: 1px solid var(--background-color);
       }
     }
   }

@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import {css, Global} from "@emotion/react";
 import App from './App.tsx';
+import {mq} from "./styles/media.ts";
 
 
 const globalStyle = css`
@@ -93,7 +94,6 @@ const globalStyle = css`
     scrollbar-color: var(--normal-gray) var(--background-color);
   }
   body {
-    
     &::-webkit-scrollbar {
       scrollbar-width: thin;
       scrollbar-color: var(--normal-gray) var(--background-color);
@@ -109,6 +109,24 @@ const globalStyle = css`
     flex-direction: column;
     align-items: center;
     margin-bottom: 6rem;
+    margin-top: 35rem;
+    .frame-container {
+      width: 60rem;
+      padding: 0 1.6rem;
+    }
+    ${mq('tablet')} {
+      margin-top: 25rem;
+      .frame-container {
+        width: 48rem;
+      }
+    }
+    ${mq('mobile')} {
+      margin-top: 18rem;
+      .frame-container {
+        width: 32rem;
+        padding: 0 0.4rem;
+      }
+    }
   }
   header {
     z-index: 10;

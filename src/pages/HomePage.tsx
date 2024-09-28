@@ -18,7 +18,7 @@ const HomePage = () => {
   return (
     <main css={main}>
       <section id="aboutMe">
-        <div className="container">
+        <div className="frame-container">
           <div css={greetting(theme)}>
             <span className="line1">안녕하세요! </span>
             <span className="line2">Frontend 개발자 <b>조성준</b>입니다.</span>
@@ -115,15 +115,10 @@ const main = css`
     flex-direction: column;
     align-items: center;
     position: relative;
-    padding: 0 1.6rem 0;
+    padding: 0 1.6rem;
   }
   
-  .container {
-    z-index: 2;
-    width: 60rem;
-    /* 3D 오브젝트 Canvas 사이즈와 함께 margin-top이 조정되어야 함 */
-    margin: 35rem auto 0;
-    padding: 0 1.6rem 0;
+  .frame-container {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
@@ -131,24 +126,18 @@ const main = css`
   
   ${mq('tablet')} {
     #aboutMe {
-      margin-top: 4.6rem;
+      padding: 0 1.6rem;
     }
-    
-    .container {
-      width: 48rem;
-      margin-top: 25rem;
+    .frame-container {
       gap: 2.8rem;
     }
   }
   
   ${mq('mobile')} {
     #aboutMe {
-      padding: 0 0.4rem 0;
+      padding: 0 0.4rem;
     }
-    .container {
-      padding: 0 0.4rem 0;
-      width: 32rem;
-      margin-top: 18rem;
+    .frame-container {
       gap: 2rem;
     }
   }
