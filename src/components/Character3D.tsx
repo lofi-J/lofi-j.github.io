@@ -21,7 +21,6 @@ const Character3D = () => {
 }
 
 const main = css`
-  z-index: 0;
   width: 48rem !important;
   height: 48rem !important;
   position: absolute !important;

@@ -47,6 +47,11 @@ const main = css`
       .title {
         font-size: 1.8rem;
       }
+      .grid-container {
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2.5rem;
+      }
     }
   }
 `;

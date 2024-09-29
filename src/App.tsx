@@ -6,6 +6,8 @@ import FloatingGuide from './components/button/FloatingGuide.tsx';
 import { ThemeProvider } from './modules/ThemeContext.tsx';
 import WorksPage from './pages/WorksPage.tsx';
 import PlaygroundPage from './pages/PlaygroundPage.tsx';
+import WorkDetailPage from "./pages/WorkDetailPage.tsx";
+import NotFoundPage from "./pages/NotFoundPage.tsx";
 
 
 export type Theme = 'light' | 'dark';
@@ -18,9 +20,12 @@ function App() {
         <FloatingGuide />
         <Layout />
         <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/works' element={<WorksPage />} />
-          <Route path='/playground' element={<PlaygroundPage />} />
+          <Route path='/' element={ <HomePage /> } />
+          <Route path='/works' element={ <WorksPage /> } />
+          <Route path='/works/:id' element={ <WorkDetailPage /> } />
+          <Route path='/playground' element={ <PlaygroundPage /> } />
+          
+          <Route path='*' element={ <NotFoundPage /> } />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

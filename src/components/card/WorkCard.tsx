@@ -1,21 +1,26 @@
 import {css} from "@emotion/react";
+import {useNavigate} from "react-router-dom";
+import {mq} from "../../styles/media.ts";
 
 
 interface IWorkCard {
+  id: string;
   imgSrc: string;
   title: string;
   description: string;
 }
 
-const WorkCard = ({imgSrc, title, description}: IWorkCard) => {
+const WorkCard = ({id, imgSrc, title, description}: IWorkCard) => {
+  const navigate = useNavigate();
+  const goToDetail = () => navigate(id);
   
   return (
     <div css={main}>
-      <div>
+      <div onClick={() => goToDetail()}>
         <img src={imgSrc} alt={`${title}.png`} />
       </div>
       <div className="text-wrap">
-        <div className="work-title">{title}</div>
+        <div className="work-title" onClick={() => goToDetail()}>{title}</div>
         <div className="description" dangerouslySetInnerHTML={{ __html: description.replace(/\n/g, "<br />") }} />
       </div>
     </div>
@@ -47,6 +52,15 @@ const main = css`
       text-wrap: wrap;
       word-break: break-word;
       text-align: center;
+    }
+  }
+  ${mq('desktop')} {
+    .work-title {
+      font-size: 1.4rem;
+    }
+    .description {
+      font-size: 1.2rem;
+      font-weight: 100;
     }
   }
 `;
