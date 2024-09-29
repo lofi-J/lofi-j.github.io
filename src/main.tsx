@@ -64,6 +64,7 @@ const globalStyle = css`
     --purple: #6B46C1;
     --purple-100: #6642B7;
     --purple-200: #603FAE;
+    --link-color: #ff63c3;
     
     --max-header-height: 5rem;
     --max-width: 120rem;
@@ -76,6 +77,7 @@ const globalStyle = css`
     --origin-background: #fff;
     
     --header-background-color: #ffffff40;
+    --link-color: rgb(61, 122, 237);
     
     // accent teal
     --accent-teal: var(--teal-400);
@@ -152,6 +154,14 @@ const globalStyle = css`
     cursor: pointer;
     outline: none;
     border: none;
+  }
+  .link {
+    cursor: pointer;
+    color: var(--link-color);
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.4rem;
+    }
   }
   
   // keyframes

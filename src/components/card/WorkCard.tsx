@@ -63,6 +63,17 @@ const main = css`
       font-weight: 100;
     }
   }
+  ${mq('mobile')} {
+    .text-wrap {
+      .work-title {
+        font-size: 1.5rem;
+      }
+      .description {
+        font-size: 1.2rem;
+        line-height: 1.4;
+      }
+    }
+  }
 `;
 
 export default WorkCard;
