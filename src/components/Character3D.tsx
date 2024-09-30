@@ -10,9 +10,9 @@ const Character3D = () => {
   return (
     <Canvas
       css={main}
-      camera={{position: [-6, 6, 6], fov: 75}}
+      camera={{position: [-6, 6, 6], fov: 80}}
     >
-      <OrbitControls minDistance={8} maxDistance={20}/>
+      <OrbitControls minDistance={8} maxDistance={15}/>
       <ambientLight intensity={1}/>
       <directionalLight position={[10, 10, 5]} intensity={1} castShadow={false}/>
       <RotatingGLB url={'/assets/dog.glb'}/>

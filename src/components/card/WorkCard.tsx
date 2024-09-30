@@ -43,6 +43,9 @@ const main = css`
       font-weight: 700;
       text-align: center;
       transition: color 0.3s ease;
+      &:hover {
+        color: var(--link-color);
+      }
     }
     .description {
       font-family: -apple-system, sans-serif;

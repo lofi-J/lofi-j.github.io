@@ -86,6 +86,7 @@ const HomePage = () => {
               <p>For more details, visit my Repositories</p>
               <div className="btn-wrap">
                 <Button
+                  className={'small-svg-btn'}
                   text={'Works'}
                   onClick={() => navigate('works')}
                   height={3.5}
@@ -139,6 +140,17 @@ const main = css`
     }
     .frame-container {
       gap: 2rem;
+      .btn-wrap {
+        button {
+          font-size: 1.1rem;
+        }
+        .small-svg-btn {
+          svg {
+            width: 0.8rem;
+            height: 0.8rem;
+          }
+        }
+      }
     }
   }
 `;

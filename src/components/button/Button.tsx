@@ -3,6 +3,7 @@ import {ReactNode} from "react";
 import {mq} from "../../styles/media.ts";
 
 interface IButton {
+  className?: string;
   text: string;
   onClick: () => void;
   color?: string;
@@ -17,11 +18,12 @@ interface IButton {
 }
 
 const Button = (
-  {text, onClick, color, weight, size, bgColor, padding=1.6, height=4, prefix, suffix, style
+  {className, text, onClick, color, weight, size, bgColor, padding=1.6, height=4, prefix, suffix, style
   }: IButton) => {
   
   return (
     <button
+      className={className}
       css={[main({ color, bgColor, padding, height, weight, size }), style]}
       onClick={onClick}
       aria-label={text}

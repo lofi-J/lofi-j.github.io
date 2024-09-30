@@ -30,7 +30,7 @@ const WorkDetailPage = () => {
           </div>
         </div>
         <div className='info-body'>
-          <p className='detail-desc'><span className='empty' />{Work.detailDesction}</p>
+          <p className='desc'><span className='empty' />{Work.description}</p>
           <div className="info-wrap">
             <div className="info">
               <span className="label-frame"><span className="label">WEBSITE</span></span>
@@ -56,23 +56,29 @@ const WorkDetailPage = () => {
             autoPlaySpeed={4}
           />
         </div>
+        <div className='detail-description'>
+        ddd
+        </div>
       </div>
     </main>
   );
 }
 
 const main = css`
+  .frame-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
   .info-header {
     position: relative;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    
     .accent {
       font-size: 1.4rem;
       font-weight: 600;
     }
-    
     .name-and-date {
       display: flex;
       align-items: center;
@@ -91,8 +97,7 @@ const main = css`
     }
   }
   .info-body {
-    margin-top: 2.5rem;
-    .detail-desc {
+    .desc {
       font-size: 1.5rem;
       line-height: 1.5;
       text-align: justify;
@@ -141,8 +146,8 @@ const main = css`
       }
     }
   }
-  .slider-container {
-    margin-top: 2.5rem;
+  .detail-description {
+  
   }
   
   ${mq('tablet')} {
@@ -167,7 +172,7 @@ const main = css`
     }
     .info-body {
       margin-top: 1.5rem;
-      .detail-desc {
+      .desc {
         font-size: 1.3rem;
         .empty {
           width: 1rem;
