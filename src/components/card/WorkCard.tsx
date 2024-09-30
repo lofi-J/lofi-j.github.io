@@ -16,11 +16,11 @@ const WorkCard = ({id, imgSrc, title, description}: IWorkCard) => {
   
   return (
     <div css={main}>
-      <div onClick={() => goToDetail()}>
+      <div onClick={() => goToDetail()} className='hover-effect'>
         <img src={imgSrc} alt={`${title}.png`} />
       </div>
       <div className="text-wrap">
-        <div className="work-title" onClick={() => goToDetail()}>{title}</div>
+        <div className="work-title hover-effect" onClick={() => goToDetail()}>{title}</div>
         <div className="description" dangerouslySetInnerHTML={{ __html: description.replace(/\n/g, "<br />") }} />
       </div>
     </div>
@@ -42,6 +42,7 @@ const main = css`
       font-size: 1.6rem;
       font-weight: 700;
       text-align: center;
+      transition: color 0.3s ease;
     }
     .description {
       font-family: -apple-system, sans-serif;
@@ -53,6 +54,9 @@ const main = css`
       word-break: break-word;
       text-align: center;
     }
+  }
+  .hover-effect:hover ~ .text-wrap .work-title {
+    color: var(--link-color);
   }
   ${mq('desktop')} {
     .work-title {
