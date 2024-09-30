@@ -21,7 +21,7 @@ const Works = {
     website: 'https://typinglab.netlify.app',
     stack: ['Next.js', 'TypeScript', 'CSS Modules'],
     deploy: 'Netlify',
-    slideImgs: ['typinglab/typinglab_thumb.png', 'typinglab/typinglab2.png', 'typinglab/typinglab3.png', 'typinglab/typinglab4.png', 'typinglab/typinglab5.png'],
+    slideImgs: ['typinglab/typinglab1.png', 'typinglab/typinglab2.png', 'typinglab/typinglab3.png', 'typinglab/typinglab4.png', 'typinglab/typinglab5.png'],
   },
   tetris: {
     id: 'tetris',
@@ -33,7 +33,7 @@ const Works = {
     website: 'https://react-js-tetris.up.railway.app',
     stack: ['React.js', 'JavaScript', 'styled-components', 'Redux', 'Node.js', 'Express.js'],
     deploy: 'Railway',
-    slideImgs: ['tetris/tetris_thumb.png', 'tetris2.png', 'tetris3.png', 'tetris/tetris4.png'],
+    slideImgs: ['tetris/tetris1.png', 'tetris/tetris2.png', 'tetris/tetris3.png'],
   },
   sorting: {
     id: 'sorting',
@@ -45,7 +45,7 @@ const Works = {
     website: 'https://main--sort-algorithms-visualization.netlify.app',
     stack: ['React.js', 'TypeScript', 'styled-components', 'Recoil'],
     deploy: 'Netlify',
-    slideImgs: ['sorting/sorting_thumb.png', 'sorting/sorting2.png'],
+    slideImgs: ['sorting/sorting1.png', 'sorting/sorting2.png', 'sorting/sorting3.png'],
   }
 }
 

@@ -46,6 +46,10 @@ const main = css`
   .slick-slider {
     position: relative;
   }
+  .slick-slide > div {
+    display: flex;
+    justify-content: center;
+  }
   .slick-track {
     display: flex;
   }
@@ -71,6 +75,6 @@ const main = css`
 `;
 
 const img = css`
-  width: 80%;
-  height: 25rem;
+  width: 100%;
+  aspect-ratio: 16 / 9;
 `;
