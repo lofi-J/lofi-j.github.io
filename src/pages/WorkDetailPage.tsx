@@ -33,11 +33,17 @@ const WorkDetailPage = () => {
           <div className="info-wrap">
             <div className="info">
               <span className="label-frame"><span className="label">WEBSITE</span></span>
-              <span className='value link' onClick={() => openNewTab(Work.website)}>{Work.website} <IoIosLink size={14} /></span>
+              <span className='value link' onClick={() => openNewTab(Work.website)}>{Work.website} <IoIosLink
+                size={14}/></span>
             </div>
             <div className="info">
               <span className="label-frame"><span className="label">STACK</span></span>
-              <div className='skills-frame'>{Work.stack.map((item, i) => (<span key={`${id}-stack-${i}`} className='value skill'>{item}</span>))}</div>
+              <span className='skills-frame'>{Work.stack.map((item, i) => (
+                <span key={`${id}-stack-${i}`} className='value skill'>{item}</span>))}</span>
+            </div>
+            <div className="info">
+              <span className="label-frame"><span className="label">DPLOY</span></span>
+              <span className='value'>{Work.deploy}</span>
             </div>
           </div>
         </div>
@@ -52,10 +58,12 @@ const main = css`
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    
     .accent {
       font-size: 1.4rem;
       font-weight: 600;
     }
+    
     .name-and-date {
       display: flex;
       align-items: center;
