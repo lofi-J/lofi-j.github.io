@@ -5,6 +5,7 @@ import { MdArrowRight } from "react-icons/md";
 import { IoIosLink } from "react-icons/io";
 import {css} from "@emotion/react";
 import { mq } from '../styles/media.ts';
+import ImgSlider from "../components/slider/ImgSlider.tsx";
 
 
 const WorkDetailPage = () => {
@@ -46,6 +47,9 @@ const WorkDetailPage = () => {
               <span className='value'>{Work.deploy}</span>
             </div>
           </div>
+        </div>
+        <div className="slider-container">
+          <ImgSlider slideImgs={Work.slideImgs} />
         </div>
       </div>
     </main>
@@ -131,6 +135,9 @@ const main = css`
         }
       }
     }
+  }
+  .slider-container {
+    margin-top: 2.5rem;
   }
   
   ${mq('tablet')} {
