@@ -49,7 +49,12 @@ const WorkDetailPage = () => {
           </div>
         </div>
         <div className="slider-container">
-          <ImgSlider slideImgs={Work.slideImgs} />
+          <ImgSlider
+            slideImgs={Work.slideImgs}
+            isAutoPlay={true}
+            isInfinite={true}
+            autoPlaySpeed={4}
+          />
         </div>
       </div>
     </main>

@@ -9,17 +9,21 @@ interface ImgSliderProps {
   slidesToShow?: number,
   slidesToScroll?: number,
   speed?: number,
+  autoPlaySpeed?: number,
+  isAutoPlay?: boolean,
   isInfinite?: boolean,
 }
 
 export default function ImgSlider(
-  {slideImgs, slidesToShow = 1, slidesToScroll = 1, speed = 500, isInfinite = false}: ImgSliderProps) {
+  {slideImgs, slidesToShow = 1, slidesToScroll = 1, speed = 1000, autoPlaySpeed = 3, isAutoPlay = false, isInfinite = false}: ImgSliderProps) {
   
   const {theme} = useTheme();
   const settings = {
     dots: false,
     infinite: isInfinite,
+    autoplay: isAutoPlay,
     speed: speed,
+    autoplaySpeed: autoPlaySpeed * 1000,
     slidesToShow: slidesToShow,
     slidesToScroll: slidesToScroll,
     nextArrow: <NextSliderArrow theme={theme} />,
@@ -77,4 +81,5 @@ const main = css`
 const img = css`
   width: 100%;
   aspect-ratio: 16 / 9;
+  border-radius: 12px;
 `;
