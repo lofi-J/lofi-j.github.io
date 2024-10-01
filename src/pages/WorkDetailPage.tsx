@@ -6,6 +6,9 @@ import { IoIosLink } from "react-icons/io";
 import {css} from "@emotion/react";
 import { mq } from '../styles/media.ts';
 import ImgSlider from "../components/slider/ImgSlider.tsx";
+import Button from "../components/button/Button.tsx";
+import SVGIcon from "../assets/svg/svg.tsx";
+import {SlArrowLeft} from "react-icons/sl";
 
 
 const WorkDetailPage = () => {
@@ -54,10 +57,33 @@ const WorkDetailPage = () => {
             isAutoPlay={true}
             isInfinite={true}
             autoPlaySpeed={4}
+            speed={2}
           />
         </div>
         <div className='detail-description'>
-        ddd
+          {Work.detailDescriptions.map((desc, i) => (
+            <p key={`${Work.title}-desc-${i}`}>{desc}</p>
+          ))}
+        </div>
+        <div className='btn-wrap'>
+          <Button
+            prefix={<SlArrowLeft />}
+            text={'Works'}
+            onClick={() => navigate('/works')}
+            color={'var(--color)'}
+            bgColor={'var(--background-color)'}
+            padding={1}
+            height={3}
+          />
+          <Button
+            prefix={<SVGIcon name={'github'} color={'var(--origin-color)'} />}
+            text={'Source'}
+            onClick={() => openNewTab(Work.github)}
+            color={'var(--color)'}
+            bgColor={'var(--background-color)'}
+            padding={1}
+            height={3}
+          />
         </div>
       </div>
     </main>
@@ -71,7 +97,6 @@ const main = css`
     gap: 2.5rem;
   }
   .info-header {
-    position: relative;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -97,6 +122,7 @@ const main = css`
     }
   }
   .info-body {
+    position: relative;
     .desc {
       font-size: 1.5rem;
       line-height: 1.5;
@@ -147,12 +173,32 @@ const main = css`
     }
   }
   .detail-description {
-  
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    p {
+      margin: unset;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+  }
+  .btn-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.8rem;
+    button {
+      border: 1px solid var(--normal-gray);
+      opacity: 0.8;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        opacity: 1;
+        border-color: var(--origin-color);
+      }
+    }
   }
   
-  ${mq('tablet')} {
-  
-  }
   ${mq('mobile')} {
     .info-header {
       .accent {
@@ -171,7 +217,6 @@ const main = css`
       }
     }
     .info-body {
-      margin-top: 1.5rem;
       .desc {
         font-size: 1.3rem;
         .empty {
@@ -185,7 +230,11 @@ const main = css`
             font-size: 1.2rem;
           }
           .label-frame {
-            width: 5.5rem;
+            max-width: 5.5rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 2rem;
             .label {
               font-size: 1.1rem;
             }
@@ -193,6 +242,16 @@ const main = css`
         }
       }
     }
+    .detail-description {
+      gap: 1rem;
+      p {
+        font-size: 1.3rem;
+        line-height: 1.3;
+      }
+    }
+  }
+  .btn-wrap {
+    margin-top: 1rem;
   }
 `;
 

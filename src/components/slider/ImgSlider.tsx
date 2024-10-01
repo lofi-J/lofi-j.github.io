@@ -15,14 +15,14 @@ interface ImgSliderProps {
 }
 
 export default function ImgSlider(
-  {slideImgs, slidesToShow = 1, slidesToScroll = 1, speed = 1000, autoPlaySpeed = 3, isAutoPlay = false, isInfinite = false}: ImgSliderProps) {
+  {slideImgs, slidesToShow = 1, slidesToScroll = 1, speed = 1, autoPlaySpeed = 3, isAutoPlay = false, isInfinite = false}: ImgSliderProps) {
   
   const {theme} = useTheme();
   const settings = {
     dots: false,
     infinite: isInfinite,
     autoplay: isAutoPlay,
-    speed: speed,
+    speed: speed * 1000,
     autoplaySpeed: autoPlaySpeed * 1000,
     slidesToShow: slidesToShow,
     slidesToScroll: slidesToScroll,
@@ -53,6 +53,7 @@ const main = css`
   .slick-slide > div {
     display: flex;
     justify-content: center;
+    border-radius: 12px;
   }
   .slick-track {
     display: flex;

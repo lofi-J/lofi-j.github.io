@@ -23,7 +23,6 @@ const NotFoundPage = () => {
 }
 
 const main = css`
-  position: relative;
   background-color: transparent;
   width: 100%;
   height: 100%;

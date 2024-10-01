@@ -113,6 +113,7 @@ const globalStyle = css`
     margin-bottom: 6rem;
     margin-top: 35rem;
     .frame-container {
+      position: relative;
       width: 60rem;
       padding: 0 1.6rem;
     }
