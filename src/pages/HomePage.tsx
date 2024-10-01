@@ -98,7 +98,7 @@ const HomePage = () => {
                   onClick={() => window.open('http://github.com/lofi-j', '_blank')}
                   height={3.5}
                   color={'var(--color)'}
-                  prefix={<SVGIcon name={'github'} color={'#000'} />}
+                  prefix={<SVGIcon name={'github'} color={'var(--origin-color)'} />}
                 />
               </div>
             </div>

@@ -48,7 +48,7 @@ const Works = {
     slideImgs: ['tetris/tetris1.png', 'tetris/tetris2.png', 'tetris/tetris3.png'],
     detailDescriptions: [
       'React.js로 만들어진 웹 테트리스 게임입니다.',
-      '주요 기능들을 훅으로 정의해 재사용이 가능하도록 모듈화되어있으며 개인적으로 React 숙력도를 높이는데 많은 도움이되었던 고마운 프로젝트입니다.',
+      '주요 기능들을 훅으로 정의해 재사용이 가능하도록 모듈화되어있으며 개인적으로 React 숙련도를 높이는데 많은 도움이되었던 고마운 프로젝트입니다.',
     ],
   },
   

@@ -32,6 +32,7 @@ const Header = ({theme, setTheme}: IHeader) => {
       '/': 'home',
       '/works': 'works',
       '/playground': 'playground',
+      '/resume': 'resume'
     };
     return pathMap[pathname] || '';
   }
@@ -48,6 +49,7 @@ const Header = ({theme, setTheme}: IHeader) => {
             <Link to={'/'} className='home'>Home</Link>
             <Link to={'/works'} className='works'>Works</Link>
             <Link to={'/playground'} className='playground'>Playground</Link>
+            <a href={'#'} className='resume'>Resume</a>
           </nav>
         )}
         <div className={'toggle-wrap'}>
@@ -62,9 +64,10 @@ const Header = ({theme, setTheme}: IHeader) => {
               <RxHamburgerMenu />
               {showSideBar && (
                 <div css={sidebar(theme)}>
-                  <Link to={'/'} className='home'>Home</Link>
-                  <Link to={'/works'} className='works'>Works</Link>
-                  <Link to={'/playground'} className='playground'>Playground</Link>
+                  <Link to={'/'} className="home">Home</Link>
+                  <Link to={'/works'} className="works">Works</Link>
+                  <Link to={'/playground'} className="playground">Playground</Link>
+                  <a href={'#'} className="resume">Resume</a>
                 </div>
               )}
             </div>
@@ -168,6 +171,13 @@ const navigation = css`
         width: 100%;
         height: 0.2rem;
         background-color: var(--accent-teal);
+      }
+    }
+  }
+  .resume {
+    &:hover {
+      &::after {
+        background-color: var(--link-color);
       }
     }
   }
