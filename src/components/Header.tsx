@@ -31,7 +31,6 @@ const Header = ({theme, setTheme}: IHeader) => {
     const pathMap: {[key: string]: string} = {
       '/': 'home',
       '/works': 'works',
-      '/playground': 'playground',
       '/resume': 'resume'
     };
     return pathMap[pathname] || '';
@@ -48,7 +47,6 @@ const Header = ({theme, setTheme}: IHeader) => {
           <nav css={navigation}>
             <Link to={'/'} className='home'>Home</Link>
             <Link to={'/works'} className='works'>Works</Link>
-            <Link to={'/playground'} className='playground'>Playground</Link>
             <a href={'#'} className='resume'>Resume</a>
           </nav>
         )}
@@ -66,7 +64,6 @@ const Header = ({theme, setTheme}: IHeader) => {
                 <div css={sidebar(theme)}>
                   <Link to={'/'} className="home">Home</Link>
                   <Link to={'/works'} className="works">Works</Link>
-                  <Link to={'/playground'} className="playground">Playground</Link>
                   <a href={'#'} className="resume">Resume</a>
                 </div>
               )}

@@ -5,7 +5,6 @@ import HomePage from "./pages/HomePage.tsx";
 import FloatingGuide from './components/button/FloatingGuide.tsx';
 import { ThemeProvider } from './modules/ThemeContext.tsx';
 import WorksPage from './pages/WorksPage.tsx';
-import PlaygroundPage from './pages/PlaygroundPage.tsx';
 import WorkDetailPage from "./pages/WorkDetailPage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 
@@ -23,7 +22,6 @@ function App() {
           <Route path='/' element={ <HomePage /> } />
           <Route path='/works' element={ <WorksPage /> } />
           <Route path='/works/:id' element={ <WorkDetailPage /> } />
-          <Route path='/playground' element={ <PlaygroundPage /> } />
           
           <Route path='*' element={ <NotFoundPage /> } />
         </Routes>
