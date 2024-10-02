@@ -15,5 +15,12 @@ export default defineConfig({
     target: 'esnext',  // 최신 JavaScript 버전으로 빌드
     minify: 'terser',   // minify 설정
     sourcemap: false,   // 소스맵 비활성화 (선택 사항)
+    rollupOptions: {
+      output: {
+        entryFileNames: '[name].js',  // .js로 빌드
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name].[ext]',
+      },
+    },
   },
 });
