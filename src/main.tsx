@@ -1,4 +1,3 @@
-import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import {css, Global} from "@emotion/react";
 import App from './App.tsx';
@@ -177,8 +176,8 @@ const globalStyle = css`
 `;
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+  <>
     <App />
     <Global styles={globalStyle} />
-  </StrictMode>,
+  </>
 )
