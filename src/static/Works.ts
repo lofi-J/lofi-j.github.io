@@ -5,7 +5,7 @@ const Works = {
     imgSrc: '/assets/thumbnail/home_thumb.png',
     title: 'Seong Jun - Homepage',
     description: '가장 최근에 작업한 웹 사이트로\n 작업물을 소개하는 프로젝트입니다.',
-    website: 'https://lofi-j.github.io/HomePage',
+    website: 'https://lofi-j.github.io',
     github: 'https://github.com/lofi-J/HomePage',
     stack: ['React.js', 'TypeScript', 'Emotion'],
     deploy: 'GitHub Pages',
