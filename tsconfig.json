@@ -5,6 +5,8 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    "target": "ESNext",  // 최신 JavaScript 버전으로 빌드
+    "module": "ESNext",  // ES 모듈 시스템 사용
     "types": ["src/types"]
   }
 }
