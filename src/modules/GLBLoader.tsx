@@ -8,7 +8,8 @@ interface IGLBLoader {
 }
 
 const GLBLoader = forwardRef<Group, IGLBLoader>(({ url, setIsDragging }, ref) => {
-  const { scene } = useGLTF(url);
+  const baseUrl = process.env.NODE_ENV === 'production' ? '/HomePage/' : '';
+  const { scene } = useGLTF(`${baseUrl}${url}`);
   
   const handleDragging = (state: boolean) => {
     if (setIsDragging) {
