@@ -47,7 +47,7 @@ const Header = ({theme, setTheme}: IHeader) => {
           <nav css={navigation}>
             <Link to={'/'} className='home'>Home</Link>
             <Link to={'/works'} className='works'>Works</Link>
-            <a href={'#'} className='resume'>Resume</a>
+            <a href={'/assets/resume.pdf'} target={'_blank'} className='resume'>Resume</a>
           </nav>
         )}
         <div className={'toggle-wrap'}>
@@ -64,7 +64,7 @@ const Header = ({theme, setTheme}: IHeader) => {
                 <div css={sidebar(theme)}>
                   <Link to={'/'} className="home">Home</Link>
                   <Link to={'/works'} className="works">Works</Link>
-                  <a href={'#'} className="resume">Resume</a>
+                  <a href={'/assets/resume.pdf'} target={'_blank'} className="resume">Resume</a>
                 </div>
               )}
             </div>
