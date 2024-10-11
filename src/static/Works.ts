@@ -9,7 +9,7 @@ const Works = {
     github: 'https://github.com/lofi-J/HomePage',
     stack: ['React.js', 'TypeScript', 'Emotion'],
     deploy: 'GitHub Pages',
-    slideImgs: ['homepage/homepage1.png', 'homepage/homepage2.png'],
+    slideImgs: ['homepage/homepage1.png', 'homepage/homepage2.png', 'homepage/homepage3.png'],
     detailDescriptions: [
       '가장 최근에 작업한 포트폴리오 용도로 제작한 웹사이트입니다.\n지금 계신 이 웹사이트에 해당합니다.',
       '@react-three/fiber와 three.js를 활용해 3D 웹 개발에 대한 이해와 적용을 해볼 수 있는 기회가 되었습니다.',
