@@ -66,6 +66,22 @@ const Works = {
     detailDescriptions: [
       '첫 웹 프로젝트로 HTML canvas와 Web Audio API를 이용해\n정렬알고리즘들의 진행과정을 시각화한 프로젝트입니다.'
     ],
+  },
+
+  ascii: {
+    id: 'ascii',
+    date: 2024,
+    imgSrc: '/assets/thumbnail/ascii_thumb.png',
+    title: 'ASCII Art Maker',
+    description: '이미지를 선택해 ASCII 아트를 생성하거나\nText를 입력해 ASCII 아트를 생성할 수 있습니다.',
+    website: 'https://ascii-art-maker.up.railway.app/',
+    github: 'https://github.com/lofi-J/Ascii-Maker',
+    stack: ['Next.js', 'TypeScript', 'CSS Modules'],
+    deploy: 'Railway',
+    slideImgs: ['ascii/ascii1.png', 'ascii/ascii2.png', 'ascii/ascii3.png', 'ascii/ascii4.png', 'ascii/ascii5.png'],
+    detailDescriptions: [
+      'Next.js로 제작한 ASCII 아트 생성기입니다. HTML Canvas를 활용해 이미지를 분석하고 이를 ASCII 아트로 변환해줍니다.'
+    ],
   }
 }
 

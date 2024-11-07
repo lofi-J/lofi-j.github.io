@@ -13,6 +13,7 @@ const WorksPage = () => {
           <WorkCard {...Works['homepage']} />
           <WorkCard {...Works['typinglab']} />
           <WorkCard {...Works['tetris']} />
+          <WorkCard {...Works['ascii']} />
           <WorkCard {...Works['sorting']} />
         </div>
       </section>
