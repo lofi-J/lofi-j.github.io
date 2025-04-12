@@ -1,53 +1,72 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import Works, {isValidWorkId} from "../static/Works.ts";
-import NotFoundPage from "./NotFoundPage.tsx";
-import { MdArrowRight } from "react-icons/md";
-import { IoIosLink } from "react-icons/io";
-import {css} from "@emotion/react";
+import Works, { isValidWorkId } from '../static/Works.ts';
+import NotFoundPage from './NotFoundPage.tsx';
+import { MdArrowRight } from 'react-icons/md';
+import { IoIosLink } from 'react-icons/io';
+import { css } from '@emotion/react';
 import { mq } from '../styles/media.ts';
-import ImgSlider from "../components/slider/ImgSlider.tsx";
-import Button from "../components/button/Button.tsx";
-import SVGIcon from "../assets/svg/svg.tsx";
-import {SlArrowLeft} from "react-icons/sl";
-
+import ImgSlider from '../components/slider/ImgSlider.tsx';
+import Button from '../components/button/Button.tsx';
+import SVGIcon from '../assets/svg/svg.tsx';
+import { SlArrowLeft } from 'react-icons/sl';
 
 const WorkDetailPage = () => {
   const navigate = useNavigate();
   const id = useParams().id;
   if (!isValidWorkId(String(id))) return <NotFoundPage />;
   const Work = Works[id as keyof typeof Works];
-  
+
   const openNewTab = (url: string) => {
     window.open(url, '_blank');
-  }
-  
+  };
+
   return (
     <main css={main}>
-      <div className='frame-container'>
-        <div className='info-header'>
-          <span className='accent link' onClick={() => navigate('/works')}>Works</span>
+      <div className="frame-container">
+        <div className="info-header">
+          <span className="accent link" onClick={() => navigate('/works')}>
+            Works
+          </span>
           <MdArrowRight size={18} />
-          <div className='name-and-date'>
-            <span className='work-name'>{Work.title}</span>
-            <span className='date'>{Work.date}</span>
+          <div className="name-and-date">
+            <span className="work-name">{Work.title}</span>
+            <span className="date">{Work.date}</span>
           </div>
         </div>
-        <div className='info-body'>
-          <p className='desc'><span className='empty' />{Work.description}</p>
+        <div className="info-body">
+          <p className="desc">
+            <span className="empty" />
+            {Work.description}
+          </p>
           <div className="info-wrap">
             <div className="info">
-              <span className="label-frame"><span className="label">WEBSITE</span></span>
-              <span className='value link' onClick={() => openNewTab(Work.website)}>{Work.website} <IoIosLink
-                size={14}/></span>
+              <span className="label-frame">
+                <span className="label">WEBSITE</span>
+              </span>
+              <span
+                className="value link"
+                onClick={() => openNewTab(Work.website)}
+              >
+                {Work.website} <IoIosLink size={14} />
+              </span>
             </div>
             <div className="info">
-              <span className="label-frame"><span className="label">STACK</span></span>
-              <span className='skills-frame'>{Work.stack.map((item, i) => (
-                <span key={`${id}-stack-${i}`} className='value skill'>{item}</span>))}</span>
+              <span className="label-frame">
+                <span className="label">STACK</span>
+              </span>
+              <span className="skills-frame">
+                {Work.stack.map((item, i) => (
+                  <span key={`${id}-stack-${i}`} className="value skill">
+                    {item}
+                  </span>
+                ))}
+              </span>
             </div>
             <div className="info">
-              <span className="label-frame"><span className="label">DPLOY</span></span>
-              <span className='value'>{Work.deploy}</span>
+              <span className="label-frame">
+                <span className="label">DPLOY</span>
+              </span>
+              <span className="value">{Work.deploy}</span>
             </div>
           </div>
         </div>
@@ -60,12 +79,12 @@ const WorkDetailPage = () => {
             speed={2}
           />
         </div>
-        <div className='detail-description'>
+        <div className="detail-description">
           {Work.detailDescriptions.map((desc, i) => (
             <p key={`${Work.title}-desc-${i}`}>{desc}</p>
           ))}
         </div>
-        <div className='btn-wrap'>
+        <div className="btn-wrap">
           <Button
             prefix={<SlArrowLeft />}
             text={'Works'}
@@ -88,7 +107,7 @@ const WorkDetailPage = () => {
       </div>
     </main>
   );
-}
+};
 
 const main = css`
   .frame-container {
@@ -198,7 +217,7 @@ const main = css`
       }
     }
   }
-  
+
   ${mq('mobile')} {
     .info-header {
       .accent {

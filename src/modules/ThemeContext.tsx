@@ -8,20 +8,27 @@ interface IThemeContext {
 
 export const ThemeContext = createContext<IThemeContext | undefined>(undefined);
 
-export const ThemeProvider: React.FC<{children: ReactNode}> = ({ children }) => {
+export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return localStorage.getItem('theme') as Theme || (userPrefersDark ? 'dark' : 'light');
+    const userPrefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+    return (
+      (localStorage.getItem('theme') as Theme) ||
+      (userPrefersDark ? 'dark' : 'light')
+    );
   });
-  
+
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
-  
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   );
-}
+};

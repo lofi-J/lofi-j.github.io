@@ -1,6 +1,6 @@
-import {css, SerializedStyles} from '@emotion/react';
-import {ReactNode} from "react";
-import {mq} from "../../styles/media.ts";
+import { css, SerializedStyles } from '@emotion/react';
+import { ReactNode } from 'react';
+import { mq } from '../../styles/media.ts';
 
 interface IButton {
   className?: string;
@@ -17,10 +17,20 @@ interface IButton {
   style?: SerializedStyles;
 }
 
-const Button = (
-  {className, text, onClick, color, weight, size, bgColor, padding=1.6, height=4, prefix, suffix, style
-  }: IButton) => {
-  
+const Button = ({
+  className,
+  text,
+  onClick,
+  color,
+  weight,
+  size,
+  bgColor,
+  padding = 1.6,
+  height = 4,
+  prefix,
+  suffix,
+  style,
+}: IButton) => {
   return (
     <button
       className={className}
@@ -33,7 +43,7 @@ const Button = (
       {suffix}
     </button>
   );
-}
+};
 
 export default Button;
 

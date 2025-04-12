@@ -1,7 +1,6 @@
-import {css} from "@emotion/react";
-import {useNavigate} from "react-router-dom";
-import {mq} from "../../styles/media.ts";
-
+import { css } from '@emotion/react';
+import { useNavigate } from 'react-router-dom';
+import { mq } from '../../styles/media.ts';
 
 interface IWorkCard {
   id: string;
@@ -10,22 +9,29 @@ interface IWorkCard {
   description: string;
 }
 
-const WorkCard = ({id, imgSrc, title, description}: IWorkCard) => {
+const WorkCard = ({ id, imgSrc, title, description }: IWorkCard) => {
   const navigate = useNavigate();
   const goToDetail = () => navigate(id);
-  
+
   return (
     <div css={main}>
-      <div onClick={() => goToDetail()} className='hover-effect'>
+      <div onClick={() => goToDetail()} className="hover-effect">
         <img src={imgSrc} alt={`${title}.png`} />
       </div>
       <div className="text-wrap">
-        <div className="work-title hover-effect" onClick={() => goToDetail()}>{title}</div>
-        <div className="description" dangerouslySetInnerHTML={{ __html: description.replace(/\n/g, "<br />") }} />
+        <div className="work-title hover-effect" onClick={() => goToDetail()}>
+          {title}
+        </div>
+        <div
+          className="description"
+          dangerouslySetInnerHTML={{
+            __html: description.replace(/\n/g, '<br />'),
+          }}
+        />
       </div>
     </div>
   );
-}
+};
 
 const main = css`
   img {
@@ -38,7 +44,7 @@ const main = css`
     .work-title {
       cursor: pointer;
       margin-top: 1rem;
-      font-family: "Nanum Gothic", sans-serif;
+      font-family: 'Nanum Gothic', sans-serif;
       font-size: 1.6rem;
       font-weight: 700;
       text-align: center;

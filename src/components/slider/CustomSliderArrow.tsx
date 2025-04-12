@@ -1,8 +1,7 @@
-import {css} from "@emotion/react";
-import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import {Theme} from "../../App.tsx";
+import { css } from '@emotion/react';
+import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
+import { Theme } from '../../App.tsx';
 import { mq } from '../../styles/media.ts';
-
 
 interface ISliderArrow {
   className?: string;
@@ -10,21 +9,29 @@ interface ISliderArrow {
   theme: Theme;
 }
 
-export const NextSliderArrow = ({className, onClick, theme}: ISliderArrow) => {
+export const NextSliderArrow = ({
+  className,
+  onClick,
+  theme,
+}: ISliderArrow) => {
   return (
     <div className={className} onClick={onClick} css={main(theme)}>
       <IoIosArrowForward size={25} />
     </div>
   );
-}
+};
 
-export const PrevSliderArrow = ({className, onClick, theme}: ISliderArrow) => {
+export const PrevSliderArrow = ({
+  className,
+  onClick,
+  theme,
+}: ISliderArrow) => {
   return (
     <div className={className} onClick={onClick} css={main(theme)}>
       <IoIosArrowBack size={25} />
     </div>
   );
-}
+};
 
 const main = (theme: Theme) => css`
   display: block;
@@ -32,7 +39,9 @@ const main = (theme: Theme) => css`
     fill: ${theme === 'dark' ? 'var(--white-alpha-500)' : 'var(--normal-gray)'};
   }
   &:hover > svg {
-    fill: ${theme === 'dark' ? 'var(--accent-teal-background-hover)' : 'var(--accent-teal)'};
+    fill: ${theme === 'dark'
+      ? 'var(--accent-teal-background-hover)'
+      : 'var(--accent-teal)'};
   }
   ${mq('mobile')} {
     svg {

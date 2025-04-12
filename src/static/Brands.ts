@@ -18,5 +18,5 @@ export const Brands = {
     color: '#F7DF1E',
     bgColor: '#000',
     fullName: 'JavaScript',
-  }
+  },
 } as const;

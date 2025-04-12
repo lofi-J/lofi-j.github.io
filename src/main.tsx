@@ -1,13 +1,12 @@
 import { createRoot } from 'react-dom/client';
-import {css, Global} from "@emotion/react";
+import { css, Global } from '@emotion/react';
 import App from './App.tsx';
-import {mq} from "./styles/media.ts";
-
+import { mq } from './styles/media.ts';
 
 const globalStyle = css`
   @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@100;200;300;400;500;700;800;900&display=swap');
-  
+
   // CSS Var
   :root {
     --background-color: rgb(24, 24, 24);
@@ -15,19 +14,19 @@ const globalStyle = css`
     --header-background-color: #20202380;
     --origin-color: #fff;
     --origin-background: #000;
-    
+
     --normal-gray: #525252;
-    --gray-50: #F7FAFC;
-    --gray-100: #EDF2F7;
-    --gray-200: #E2E8F0;
-    --gray-300: #CBD5E0;
-    --gray-400: #A0AEC0;
+    --gray-50: #f7fafc;
+    --gray-100: #edf2f7;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e0;
+    --gray-400: #a0aec0;
     --gray-500: #718096;
-    --gray-600: #4A5568;
-    --gray-700: #2D3748;
-    --gray-800: #1A202C;
+    --gray-600: #4a5568;
+    --gray-700: #2d3748;
+    --gray-800: #1a202c;
     --gray-900: #171923;
-    
+
     --white-alpha-100: rgba(255, 255, 255, 0.04);
     --white-alpha-200: rgba(255, 255, 255, 0.06);
     --white-alpha-300: rgba(255, 255, 255, 0.08);
@@ -36,35 +35,35 @@ const globalStyle = css`
     --white-alpha-600: rgba(255, 255, 255, 0.36);
     --white-alpha-700: rgba(255, 255, 255, 0.48);
     --white-alpha-800: rgba(255, 255, 255, 0.64);
-    --white-alpha-900: rgba(255, 255, 255, 0.80);
-    
-    --teal-100: #B2F5EA;
-    --teal-200: #81E6D9;
-    --teal-300: #4FD1C5;
-    --teal-400: #38B2AC;
+    --white-alpha-900: rgba(255, 255, 255, 0.8);
+
+    --teal-100: #b2f5ea;
+    --teal-200: #81e6d9;
+    --teal-300: #4fd1c5;
+    --teal-400: #38b2ac;
     --teal-500: #319795;
-    --teal-600: #2C7A7B;
-    --teal-700: #285E61;
-    --teal-800: #234E52;
-    --teal-900: #1D4044;
-    
+    --teal-600: #2c7a7b;
+    --teal-700: #285e61;
+    --teal-800: #234e52;
+    --teal-900: #1d4044;
+
     // teal accent
     --accent-teal: var(--teal-200);
     --accent-teal-background: rgba(129, 230, 217, 0.12);
     --accent-teal-background-hover: rgba(129, 230, 217, 0.5);
-    
+
     // button
     --button-bg: var(--accent-teal-background);
     --button-bg-hover: var(--accent-teal-background-hover);
-    
-    --orange: #FBD38D;
-    --orange-100: #EEC886;
-    --orange-200: #E2BE7F;
-    --purple: #6B46C1;
-    --purple-100: #6642B7;
-    --purple-200: #603FAE;
+
+    --orange: #fbd38d;
+    --orange-100: #eec886;
+    --orange-200: #e2be7f;
+    --purple: #6b46c1;
+    --purple-100: #6642b7;
+    --purple-200: #603fae;
     --link-color: #ff63c3;
-    
+
     --max-header-height: 5rem;
     --max-width: 120rem;
     --backdrop: 1rem;
@@ -74,10 +73,10 @@ const globalStyle = css`
     --color: rgb(20, 24, 33);
     --origin-color: #000;
     --origin-background: #fff;
-    
+
     --header-background-color: #ffffff40;
     --link-color: rgb(61, 122, 237);
-    
+
     // accent teal
     --accent-teal: var(--teal-400);
     --accent-teal-background: var(--teal-100);
@@ -86,7 +85,7 @@ const globalStyle = css`
     --button-bg: var(--teal-100);
     --button-bg-hover: var(--teal-200);
   }
-  
+
   // initial CSS
   html {
     font-size: 62.5%;
@@ -100,7 +99,8 @@ const globalStyle = css`
       scrollbar-color: var(--normal-gray) var(--background-color);
     }
   }
-  main, body {
+  main,
+  body {
     margin: 0;
     background-color: var(--background-color);
     color: var(--color);
@@ -142,7 +142,7 @@ const globalStyle = css`
   }
   * {
     box-sizing: border-box;
-    font-family: "Nanum Gothic", sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
     font-weight: 400;
     font-style: normal;
   }
@@ -163,15 +163,23 @@ const globalStyle = css`
       text-underline-offset: 0.4rem;
     }
   }
-  
+
   // keyframes
   @keyframes spin {
-    from { transform: rotate(0); }
-    to { transform: rotate(359deg); }
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(359deg);
+    }
   }
   @keyframes minusSpin {
-    from { transform: rotate(0); }
-    to { transform: rotate(-359deg); }
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(-359deg);
+    }
   }
 `;
 
@@ -180,4 +188,4 @@ createRoot(document.getElementById('root')!).render(
     <App />
     <Global styles={globalStyle} />
   </>
-)
+);

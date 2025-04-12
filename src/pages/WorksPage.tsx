@@ -1,8 +1,7 @@
 import { css } from '@emotion/react';
-import {mq} from "../styles/media.ts";
-import WorkCard from "../components/card/WorkCard.tsx";
-import Works from "../static/Works.ts";
-
+import { mq } from '../styles/media.ts';
+import WorkCard from '../components/card/WorkCard.tsx';
+import Works from '../static/Works.ts';
 
 const WorksPage = () => {
   return (
@@ -19,18 +18,18 @@ const WorksPage = () => {
       </section>
     </main>
   );
-}
+};
 
 const main = css`
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 1;
-  
+
   .frame-container {
     margin-top: 1.2rem;
     .title {
-      font-family: "M PLUS Rounded 1c", sans-serif;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
       font-size: 2rem;
       font-weight: bold;
       margin-bottom: 1rem;
@@ -42,7 +41,7 @@ const main = css`
       gap: 1.5rem;
     }
   }
-  
+
   ${mq('tablet')} {
     .frame-container {
       .title {

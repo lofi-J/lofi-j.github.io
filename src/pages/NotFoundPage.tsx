@@ -1,18 +1,23 @@
-import {useNavigate} from "react-router-dom";
-import {css} from "@emotion/react";
-import Button from "../components/button/Button.tsx";
-import {mq} from "../styles/media.ts";
+import { useNavigate } from 'react-router-dom';
+import { css } from '@emotion/react';
+import Button from '../components/button/Button.tsx';
+import { mq } from '../styles/media.ts';
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
   const goHome = () => navigate('/');
-  
+
   return (
     <main css={main}>
-      <div className='frame-container'>
-        <div className='text-wrap'>
+      <div className="frame-container">
+        <div className="text-wrap">
           <h1>NOT FOUND</h1>
-          <div className='desc'>페이지를 찾을 수 없습니다.<br/>하단 버튼 또는 네비게이션 메뉴를 통해 메인 페이지로 이동하실 수 있습니다.</div>
+          <div className="desc">
+            페이지를 찾을 수 없습니다.
+            <br />
+            하단 버튼 또는 네비게이션 메뉴를 통해 메인 페이지로 이동하실 수
+            있습니다.
+          </div>
         </div>
         <div className="btn-wrap">
           <Button text={'Return to home'} onClick={goHome} />
@@ -20,7 +25,7 @@ const NotFoundPage = () => {
       </div>
     </main>
   );
-}
+};
 
 const main = css`
   background-color: transparent;

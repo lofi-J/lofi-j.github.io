@@ -2,8 +2,7 @@
 
 ### 이 프로젝트는 포트폴리오 웹사이트입니다.
 
-
-####  홈페이지 주소: [https://lofi-j.github.io](https://lofi-j.github.io)
+#### 홈페이지 주소: [https://lofi-j.github.io](https://lofi-j.github.io)
 
 ## 🚀 소개
 
@@ -23,7 +22,9 @@
 - **TypeScript**: 프로그래밍 언어
 
 ## ✨ Email
-lofi2505@gmail.com
+
+- lofi2505@gmail.com
+- jsj2505@gmail.com
 
 ## 📦 설치 및 실행 방법
 

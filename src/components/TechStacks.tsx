@@ -1,20 +1,19 @@
 import { css } from '@emotion/react';
-import TechStack from "../static/TechStacks";
+import TechStack from '../static/TechStacks';
 import SVGIcon from '../assets/svg/svg.tsx';
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
 import { Theme } from '../App.tsx';
 import useTheme from '../hooks/useTheme.ts';
-import {mq} from "../styles/media.ts";
-
+import { mq } from '../styles/media.ts';
 
 interface ITechStacks {
   type: keyof typeof TechStack;
 }
 
-const TechStacks = ({type}: ITechStacks) => {
-  const {theme} = useTheme();
-  
+const TechStacks = ({ type }: ITechStacks) => {
+  const { theme } = useTheme();
+
   return (
     <div css={main(theme)}>
       <div className="title">
@@ -30,16 +29,13 @@ const TechStacks = ({type}: ITechStacks) => {
               data-tooltip-id={`tooltip-${skill.name}`}
               data-tooltip-content={skill.name}
             />
-            <Tooltip
-              id={`tooltip-${skill.name}`}
-              place={'top'}
-            />
+            <Tooltip id={`tooltip-${skill.name}`} place={'top'} />
           </div>
         ))}
       </div>
     </div>
   );
-}
+};
 
 const main = (theme: Theme) => css`
   display: flex;
@@ -71,19 +67,27 @@ const main = (theme: Theme) => css`
     }
     /* svg icon exceptions */
     .javascript {
-       background-color: ${theme === 'dark' ? 'var(--background-color)' : 'var(--color)'};
+      background-color: ${theme === 'dark'
+        ? 'var(--background-color)'
+        : 'var(--color)'};
     }
     .next {
-      border-color: ${theme === 'dark' ? 'transparent' : 'var(--background-color)'};
+      border-color: ${theme === 'dark'
+        ? 'transparent'
+        : 'var(--background-color)'};
       background-color: ${theme === 'dark' ? '' : 'var(--background-color)'};
     }
-    .cssmodule, .githubpages {
+    .cssmodule,
+    .githubpages {
       stroke: var(--normal-gray);
     }
-    .railway, .github, .next {
+    .railway,
+    .github,
+    .next {
       fill: black;
       background-color: white;
-      border: 0.1rem solid ${theme === 'dark' ? 'var(--color)' : 'var(--background-color)'};
+      border: 0.1rem solid
+        ${theme === 'dark' ? 'var(--color)' : 'var(--background-color)'};
       border-radius: 50%;
     }
   }

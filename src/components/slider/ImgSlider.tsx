@@ -1,23 +1,28 @@
-import Slider from "react-slick";
-import {css} from "@emotion/react";
-import {NextSliderArrow, PrevSliderArrow} from "./CustomSliderArrow.tsx";
-import useTheme from "../../hooks/useTheme.ts";
-
+import Slider from 'react-slick';
+import { css } from '@emotion/react';
+import { NextSliderArrow, PrevSliderArrow } from './CustomSliderArrow.tsx';
+import useTheme from '../../hooks/useTheme.ts';
 
 interface ImgSliderProps {
-  slideImgs: string[],
-  slidesToShow?: number,
-  slidesToScroll?: number,
-  speed?: number,
-  autoPlaySpeed?: number,
-  isAutoPlay?: boolean,
-  isInfinite?: boolean,
+  slideImgs: string[];
+  slidesToShow?: number;
+  slidesToScroll?: number;
+  speed?: number;
+  autoPlaySpeed?: number;
+  isAutoPlay?: boolean;
+  isInfinite?: boolean;
 }
 
-export default function ImgSlider(
-  {slideImgs, slidesToShow = 1, slidesToScroll = 1, speed = 1, autoPlaySpeed = 3, isAutoPlay = false, isInfinite = false}: ImgSliderProps) {
-  
-  const {theme} = useTheme();
+export default function ImgSlider({
+  slideImgs,
+  slidesToShow = 1,
+  slidesToScroll = 1,
+  speed = 1,
+  autoPlaySpeed = 3,
+  isAutoPlay = false,
+  isInfinite = false,
+}: ImgSliderProps) {
+  const { theme } = useTheme();
   const settings = {
     dots: false,
     infinite: isInfinite,
@@ -29,12 +34,17 @@ export default function ImgSlider(
     nextArrow: <NextSliderArrow theme={theme} />,
     prevArrow: <PrevSliderArrow theme={theme} />,
   };
-  
+
   return (
     <div css={main}>
       <Slider {...settings}>
         {slideImgs.map((imgPath, i) => (
-          <img css={img} key={`${imgPath}-${i}`} src={`/assets/presentation/${imgPath}`} alt={imgPath} />
+          <img
+            css={img}
+            key={`${imgPath}-${i}`}
+            src={`/assets/presentation/${imgPath}`}
+            alt={imgPath}
+          />
         ))}
       </Slider>
     </div>

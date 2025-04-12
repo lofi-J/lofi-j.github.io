@@ -1,27 +1,28 @@
 import { css } from '@emotion/react';
-import {mq} from '../styles/media.ts';
+import { mq } from '../styles/media.ts';
 import { Theme } from '../App.tsx';
 import useTheme from '../hooks/useTheme.ts';
 import githubProfile from '../assets/img/github_profile.png';
-import SVGIcon from "../assets/svg/svg.tsx";
-import Iframe from "../components/youtube/Iframe.tsx";
-import TechStacks from "../components/TechStacks.tsx";
+import SVGIcon from '../assets/svg/svg.tsx';
+import Iframe from '../components/youtube/Iframe.tsx';
+import TechStacks from '../components/TechStacks.tsx';
 import Button from '../components/button/Button.tsx';
-import {useNavigate} from "react-router-dom";
-import { SlArrowRight } from "react-icons/sl";
-
+import { useNavigate } from 'react-router-dom';
+import { SlArrowRight } from 'react-icons/sl';
 
 const HomePage = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
-  
+
   return (
     <main css={main}>
       <section id="aboutMe">
         <div className="frame-container">
           <div css={greetting(theme)}>
             <span className="line1">안녕하세요! </span>
-            <span className="line2">Frontend 개발자 <b>조성준</b>입니다.</span>
+            <span className="line2">
+              Frontend 개발자 <b>조성준</b>입니다.
+            </span>
           </div>
           <div css={profile}>
             <div className="left">
@@ -32,24 +33,36 @@ const HomePage = () => {
                 <span>Learning Mindset</span>
               </div>
             </div>
-            <div className="right" onClick={() => window.open('https://github.com/lofi-j', '_blank')}>
+            <div
+              className="right"
+              onClick={() => window.open('https://github.com/lofi-j', '_blank')}
+            >
               <img src={githubProfile} alt="github_profile" loading={'lazy'} />
             </div>
           </div>
           <div css={description}>
             <strong>I'm</strong>
             <div className="desc">
-              <p>유지 보수에 용이한 코드를 작성하기 위한 공을 들이고, 퍼포먼스 중심의 코드를 작성하기 위한 다양한 시도를 하는 프론트엔드 개발자입니다.</p>
-              <p>새로운 도전 속에서 얻게 되는 배움을 좋아하며, 책임감과 끈기로 성장해 나아가고 있습니다.</p>
+              <p>
+                유지 보수에 용이한 코드를 작성하기 위한 공을 들이고, 퍼포먼스
+                중심의 코드를 작성하기 위한 다양한 시도를 하는 프론트엔드
+                개발자입니다.
+              </p>
+              <p>
+                새로운 도전 속에서 얻게 되는 배움을 좋아하며, 책임감과 끈기로
+                성장해 나아가고 있습니다.
+              </p>
             </div>
           </div>
           <div css={description}>
             <strong>I ♥</strong>
             <div className="desc">
               <p className="nowrap">
-                <SVGIcon name={'react'} /><em>React.js</em>
+                <SVGIcon name={'react'} />
+                <em>React.js</em>
                 <span className="m-r">,</span>
-                <SVGIcon name={'typescript'} className={'tsSVG'} /><em>Typescript</em>
+                <SVGIcon name={'typescript'} className={'tsSVG'} />
+                <em>Typescript</em>
                 조합을 사랑합니다. 😊
               </p>
             </div>
@@ -95,10 +108,14 @@ const HomePage = () => {
                 />
                 <Button
                   text={'Github'}
-                  onClick={() => window.open('http://github.com/lofi-j', '_blank')}
+                  onClick={() =>
+                    window.open('http://github.com/lofi-j', '_blank')
+                  }
                   height={3.5}
                   color={'var(--color)'}
-                  prefix={<SVGIcon name={'github'} color={'var(--origin-color)'} />}
+                  prefix={
+                    <SVGIcon name={'github'} color={'var(--origin-color)'} />
+                  }
                 />
               </div>
             </div>
@@ -107,7 +124,7 @@ const HomePage = () => {
       </section>
     </main>
   );
-}
+};
 
 const main = css`
   #aboutMe {
@@ -118,13 +135,13 @@ const main = css`
     position: relative;
     padding: 0 1.6rem;
   }
-  
+
   .frame-container {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
   }
-  
+
   ${mq('tablet')} {
     #aboutMe {
       padding: 0 1.6rem;
@@ -133,7 +150,7 @@ const main = css`
       gap: 2.8rem;
     }
   }
-  
+
   ${mq('mobile')} {
     #aboutMe {
       padding: 0 0.4rem;
@@ -158,14 +175,16 @@ const main = css`
 const greetting = (theme: Theme) => css`
   padding: 1.2rem 0.8rem;
   border-radius: 8px;
-  background-color: ${theme === 'dark' ? 'var(--white-alpha-200)' : 'var(--white-alpha-500)'};
+  background-color: ${theme === 'dark'
+    ? 'var(--white-alpha-200)'
+    : 'var(--white-alpha-500)'};
   text-align: center;
   font-size: 1.6rem;
   b {
     font-weight: 600;
     color: ${theme === 'dark' ? 'var(--teal-200)' : 'black'};
   }
-  
+
   ${mq('tablet')} {
     padding: 1rem 0.8rem;
     font-size: 1.4rem;
@@ -186,7 +205,7 @@ const profile = css`
     .en_name {
       font-size: 3.6rem;
       font-weight: 600;
-      font-family: "M PLUS Rounded 1c", sans-serif;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
       margin-bottom: 1rem;
     }
     .trait {
@@ -230,8 +249,8 @@ const profile = css`
       }
     }
   }
-  
-  ${mq("tablet")} {
+
+  ${mq('tablet')} {
     .left {
       .en_name {
         font-size: 3rem;
@@ -251,7 +270,7 @@ const profile = css`
       }
     }
   }
-  ${mq("mobile")} {
+  ${mq('mobile')} {
     flex-direction: column;
     .right {
       display: flex;
@@ -264,7 +283,7 @@ const profile = css`
 const description = css`
   strong {
     position: relative;
-    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 2rem;
     font-weight: bold;
     text-decoration: underline;
@@ -286,7 +305,7 @@ const description = css`
         margin-top: 0.5rem;
       }
       em {
-        font-family: "Yu Gothic UI", sans-serif;
+        font-family: 'Yu Gothic UI', sans-serif;
         font-size: 1.3rem;
         font-weight: 600;
         margin-right: 0.2rem;
@@ -300,7 +319,7 @@ const description = css`
         height: 1.8rem;
         margin-right: 0.3rem;
         &.tsSVG {
-          fill: #3178C6;
+          fill: #3178c6;
         }
       }
     }
@@ -339,6 +358,6 @@ const description = css`
       flex-direction: column;
     }
   }
-`
+`;
 
 export default HomePage;
