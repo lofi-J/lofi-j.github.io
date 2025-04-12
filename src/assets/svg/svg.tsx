@@ -5,6 +5,7 @@ import ViteIcon from './vite.svg?react';
 import HmmIcon from './hmm.svg?react';
 import TSIcon from './typescript.svg?react';
 import HTML5Icon from './html5.svg?react';
+import TailwindCSS from './tailwind.svg?react';
 import CSS3Icon from './css3.svg?react';
 import JavascriptIcon from './javascript.svg?react';
 import GitIcon from './git.svg?react';
@@ -18,6 +19,7 @@ import EmotionIcon from './emotion.svg?react';
 import RecoilIcon from './recoil.svg?react';
 import ReduxIcon from './redux.svg?react';
 import GithubPagesIcon from './githubpages.svg?react';
+import GraphQL from './graphql.svg?react';
 
 // svgObj 객체 정의
 const svgObj = {
@@ -40,6 +42,8 @@ const svgObj = {
   recoil: RecoilIcon,
   redux: ReduxIcon,
   githubpages: GithubPagesIcon,
+  tailwind: TailwindCSS,
+  graphql: GraphQL,
 };
 
 // SVGIcon 컴포넌트

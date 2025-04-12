@@ -7,6 +7,7 @@ const TechStack = {
       { name: 'TypeScript', svg: 'typescript', color: '#3178C6' },
       { name: 'React.js', svg: 'react', color: '#61DAFB' },
       { name: 'Next.js', svg: 'next', color: '#000' },
+      { name: 'GraphQL', svg: 'graphql', color: '#f6009b' },
       { name: 'Recoil', svg: 'recoil', color: '#3578E5' },
       { name: 'Redux', svg: 'redux', color: '#764ABC' },
     ],
@@ -15,9 +16,10 @@ const TechStack = {
     fullName: 'Styles',
     skills: [
       { name: 'CSS3', svg: 'css', color: '#1572B6' },
-      { name: 'CSS Modules', svg: 'cssmodule', color: '#fff' },
-      { name: 'styled-components', svg: 'styledcomponents', color: '#DB7093' },
+      { name: 'TailwindCSS', svg: 'tailwind', color: '' },
       { name: 'Emotion', svg: 'emotion', color: '' },
+      { name: 'styled-components', svg: 'styledcomponents', color: '#DB7093' },
+      { name: 'CSS Modules', svg: 'cssmodule', color: '#fff' },
     ],
   },
   deployment: {
