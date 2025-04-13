@@ -40,6 +40,7 @@ const main = css`
     border: 1px solid var(--normal-gray);
     border-radius: 8px;
   }
+
   .text-wrap {
     .work-title {
       cursor: pointer;
@@ -49,10 +50,12 @@ const main = css`
       font-weight: 700;
       text-align: center;
       transition: color 0.3s ease;
+
       &:hover {
         color: var(--link-color);
       }
     }
+
     .description {
       font-family: -apple-system, sans-serif;
       font-size: 1.4rem;
@@ -64,23 +67,28 @@ const main = css`
       text-align: center;
     }
   }
+
   .hover-effect:hover ~ .text-wrap .work-title {
     color: var(--link-color);
   }
+
   ${mq('desktop')} {
     .work-title {
       font-size: 1.4rem;
     }
+
     .description {
       font-size: 1.2rem;
       font-weight: 100;
     }
   }
+
   ${mq('mobile')} {
     .text-wrap {
       .work-title {
         font-size: 1.5rem;
       }
+
       .description {
         font-size: 1.2rem;
         line-height: 1.4;

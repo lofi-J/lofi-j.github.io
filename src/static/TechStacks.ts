@@ -5,7 +5,7 @@ const TechStack = {
       { name: 'HTML5', svg: 'html', color: '#E34F26' },
       { name: 'JavaScript', svg: 'javascript', color: '#F7DF1E' },
       { name: 'TypeScript', svg: 'typescript', color: '#3178C6' },
-      { name: 'React.js', svg: 'react', color: '#61DAFB' },
+      { name: 'React.js & React Native', svg: 'react', color: '#61DAFB' },
       { name: 'Next.js', svg: 'next', color: '#000' },
       { name: 'GraphQL', svg: 'graphql', color: '#f6009b' },
       { name: 'Recoil', svg: 'recoil', color: '#3578E5' },
