@@ -4,8 +4,7 @@ const Works = {
     date: 2024,
     imgSrc: '/assets/thumbnail/home_thumb.png',
     title: 'Seong Jun - Homepage',
-    description:
-      '가장 최근에 작업한 웹 사이트로\n 작업물을 소개하는 프로젝트입니다.',
+    description: '작업물을 소개하는 포트폴리오용 프로젝트입니다.',
     website: 'https://lofi-j.github.io',
     github: 'https://github.com/lofi-J/HomePage',
     stack: ['React.js', 'TypeScript', 'Emotion'],
@@ -16,7 +15,7 @@ const Works = {
       'homepage/homepage3.png',
     ],
     detailDescriptions: [
-      '가장 최근에 작업한 포트폴리오 용도로 제작한 웹사이트입니다.\n지금 계신 이 웹사이트에 해당합니다.',
+      '포트폴리오 용도로 제작한 웹사이트입니다.\n지금 계신 이 웹사이트에 해당합니다.',
       '@react-three/fiber와 three.js를 활용해 3D 웹 개발에 대한 이해와 적용을 해볼 수 있는 기회가 되었습니다.',
       '해당 프로젝트는 특히 다양한 이미지 파일과 아이콘을 사용하며 효율적인 관리법에 대한 다양한 방법들을 적용하고 배울 수 있는 좋은 계기가 되었습니다.',
     ],
@@ -29,7 +28,7 @@ const Works = {
     title: 'Typing Lab',
     description:
       '타이핑할 문장을 선택해 \n타이핑 연습을 할 수 있는 사이트입니다.',
-    website: 'https://typinglab.netlify.app',
+    website: 'https://typing-lab.vercel.app/',
     github: 'https://github.com/lofi-J/Typing-Lab',
     stack: ['Next.js', 'TypeScript', 'CSS Modules'],
     deploy: 'Netlify',
@@ -54,7 +53,7 @@ const Works = {
     title: 'Web Tetris (game)',
     description:
       '웹 테트리스 게임으로 React hook \n사용법을 익히기 위해 제작했습니다.',
-    website: 'https://react-js-tetris.up.railway.app',
+    website: 'https://tetris-v1-two.vercel.app/',
     github: 'https://github.com/lofi-J/tetris-v1',
     stack: [
       'React.js',
@@ -83,7 +82,7 @@ const Works = {
     title: 'Sorting Algorithm Visualization',
     description:
       '웹 개발을 시작한 이후 첫 작업물로 \n정렬 알고리즘을 시각화한 프로젝트입니다.',
-    website: 'https://main--sort-algorithms-visualization.netlify.app',
+    website: 'https://algorithm-visualization-steel.vercel.app/',
     github: 'https://github.com/lofi-J/Algorithm-Visualization',
     stack: ['React.js', 'TypeScript', 'styled-components', 'Recoil'],
     deploy: 'Netlify',
@@ -104,7 +103,7 @@ const Works = {
     title: 'ASCII Art Maker',
     description:
       '이미지를 선택해 ASCII 아트를 생성하거나\nText를 입력해 ASCII 아트를 생성할 수 있습니다.',
-    website: 'https://ascii-art-maker.up.railway.app/',
+    website: 'https://ascii-maker.vercel.app/',
     github: 'https://github.com/lofi-J/Ascii-Maker',
     stack: ['Next.js', 'TypeScript', 'CSS Modules'],
     deploy: 'Railway',

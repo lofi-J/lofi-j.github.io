@@ -16,8 +16,6 @@
 - **React Three Fiber**: Three.js를 사용하여 3D 그래픽을 구현하기 위한 React 렌더러
 - **@emotion/react**: 컴포넌트 스타일링을 위한 CSS-in-JS 라이브러리
 - **React Router**: 페이지 간 라우팅을 담당하는 라이브러리
-- **React Icons**: 다양한 아이콘을 제공하는 React 라이브러리
-- **React Slick**: 반응형 슬라이더를 구현하기 위한 라이브러리
 - **Three.js**: 웹에서 3D 그래픽을 구현하기 위한 라이브러리
 - **TypeScript**: 프로그래밍 언어
 
