@@ -1,14 +1,14 @@
-import { useNavigate, useParams } from 'react-router-dom';
-import Works, { isValidWorkId } from '../static/Works.ts';
-import NotFoundPage from './NotFoundPage.tsx';
-import { MdArrowRight } from 'react-icons/md';
-import { IoIosLink } from 'react-icons/io';
 import { css } from '@emotion/react';
-import { mq } from '../styles/media.ts';
-import ImgSlider from '../components/slider/ImgSlider.tsx';
-import Button from '../components/button/Button.tsx';
-import SVGIcon from '../assets/svg/svg.tsx';
+import { IoIosLink } from 'react-icons/io';
+import { MdArrowRight } from 'react-icons/md';
 import { SlArrowLeft } from 'react-icons/sl';
+import { useNavigate, useParams } from 'react-router-dom';
+import SVGIcon from '../assets/svg/svg.tsx';
+import Button from '../components/button/Button.tsx';
+import ImgSlider from '../components/slider/ImgSlider.tsx';
+import { Works, isValidWorkId } from '../static/Works.ts';
+import { mq } from '../styles/media.ts';
+import NotFoundPage from './NotFoundPage.tsx';
 
 const WorkDetailPage = () => {
   const navigate = useNavigate();

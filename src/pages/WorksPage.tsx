@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
-import { mq } from '../styles/media.ts';
 import WorkCard from '../components/card/WorkCard.tsx';
-import Works from '../static/Works.ts';
+import { Works } from '../static/Works.ts';
+import { mq } from '../styles/media.ts';
 
 const WorksPage = () => {
   return (

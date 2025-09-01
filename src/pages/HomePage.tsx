@@ -1,14 +1,15 @@
 import { css } from '@emotion/react';
-import { mq } from '../styles/media.ts';
+import { SlArrowRight } from 'react-icons/sl';
+import { useNavigate } from 'react-router-dom';
 import { Theme } from '../App.tsx';
-import useTheme from '../hooks/useTheme.ts';
 import githubProfile from '../assets/img/github_profile.png';
 import SVGIcon from '../assets/svg/svg.tsx';
-import Iframe from '../components/youtube/Iframe.tsx';
 import TechStacks from '../components/TechStacks.tsx';
 import Button from '../components/button/Button.tsx';
-import { useNavigate } from 'react-router-dom';
-import { SlArrowRight } from 'react-icons/sl';
+import Iframe from '../components/youtube/Iframe.tsx';
+import useTheme from '../hooks/useTheme.ts';
+import { Works } from '../static/Works.ts';
+import { mq } from '../styles/media.ts';
 
 const HomePage = () => {
   const { theme } = useTheme();
@@ -74,13 +75,13 @@ const HomePage = () => {
                 name={'tetris_demo'}
                 title={'TETRIS'}
                 skills={['react', 'javascript']}
-                url={'https://react-js-tetris.up.railway.app/'}
+                url={Works['tetris'].website}
               />
               <Iframe
                 name={'typinglab_demo'}
                 title={'TypingLab'}
                 skills={['next', 'typescript']}
-                url={'https://typinglab.netlify.app/'}
+                url={Works['typinglab'].website}
               />
             </div>
           </div>

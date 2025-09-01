@@ -1,4 +1,4 @@
-const Works = {
+export const Works = {
   homepage: {
     id: 'homepage',
     date: 2024,
@@ -123,5 +123,3 @@ const Works = {
 export const isValidWorkId = (id: string) => {
   return !!Object.values(Works).find((work) => work.id === id);
 };
-
-export default Works;
