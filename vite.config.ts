@@ -1,9 +1,10 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
   plugins: [react({ jsxImportSource: '@emotion/react' }), svgr()],
+  base: './', // 상대 경로로 설정하여 어떤 환경에서도 작동하도록
   server: {
     port: 3000,
     strictPort: true,
