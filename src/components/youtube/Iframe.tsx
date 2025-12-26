@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 import { useRef, useState } from 'react';
-import { Brands } from '../../static/Brands.ts';
 import { IoIosLink } from 'react-icons/io';
 import SVGIcon from '../../assets/svg/svg.tsx';
+import { Brands } from '../../static/Brands.ts';
 import { mq } from '../../styles/media.ts';
 
 interface IframeProps {
